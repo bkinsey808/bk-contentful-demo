@@ -319,6 +319,185 @@ export enum AuthorOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/banner) */
+export type Banner = Entry & {
+  __typename?: 'Banner';
+  componentName?: Maybe<Scalars['String']>;
+  componentType?: Maybe<Scalars['String']>;
+  contentfulMetadata: ContentfulMetadata;
+  height?: Maybe<Scalars['String']>;
+  linkedFrom?: Maybe<BannerLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/banner) */
+export type BannerComponentNameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/banner) */
+export type BannerComponentTypeArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/banner) */
+export type BannerHeightArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/banner) */
+export type BannerLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type BannerCollection = {
+  __typename?: 'BannerCollection';
+  items: Array<Maybe<Banner>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type BannerFilter = {
+  AND?: InputMaybe<Array<InputMaybe<BannerFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<BannerFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  height?: InputMaybe<Scalars['String']>;
+  height_contains?: InputMaybe<Scalars['String']>;
+  height_exists?: InputMaybe<Scalars['Boolean']>;
+  height_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  height_not?: InputMaybe<Scalars['String']>;
+  height_not_contains?: InputMaybe<Scalars['String']>;
+  height_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type BannerLinkingCollections = {
+  __typename?: 'BannerLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
+};
+
+
+export type BannerLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type BannerLinkingCollectionsPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum BannerOrder {
+  ComponentNameAsc = 'componentName_ASC',
+  ComponentNameDesc = 'componentName_DESC',
+  ComponentTypeAsc = 'componentType_ASC',
+  ComponentTypeDesc = 'componentType_DESC',
+  HeightAsc = 'height_ASC',
+  HeightDesc = 'height_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
+export type ComponentType = Entry & {
+  __typename?: 'ComponentType';
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<ComponentTypeLinkingCollections>;
+  name?: Maybe<Scalars['String']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
+export type ComponentTypeLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
+export type ComponentTypeNameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentTypeCollection = {
+  __typename?: 'ComponentTypeCollection';
+  items: Array<Maybe<ComponentType>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type ComponentTypeFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ComponentTypeFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ComponentTypeFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  name?: InputMaybe<Scalars['String']>;
+  name_contains?: InputMaybe<Scalars['String']>;
+  name_exists?: InputMaybe<Scalars['Boolean']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  name_not?: InputMaybe<Scalars['String']>;
+  name_not_contains?: InputMaybe<Scalars['String']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type ComponentTypeLinkingCollections = {
+  __typename?: 'ComponentTypeLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type ComponentTypeLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum ComponentTypeOrder {
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type ContentfulMetadata = {
   __typename?: 'ContentfulMetadata';
   tags: Array<Maybe<ContentfulTag>>;
@@ -640,11 +819,21 @@ export enum NavigationItemOrder {
 /** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/page) */
 export type Page = Entry & {
   __typename?: 'Page';
+  contentCollection?: Maybe<PageContentCollection>;
   contentfulMetadata: ContentfulMetadata;
   linkedFrom?: Maybe<PageLinkingCollections>;
   slug?: Maybe<Scalars['String']>;
   sys: Sys;
   title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/page) */
+export type PageContentCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -673,9 +862,18 @@ export type PageCollection = {
   total: Scalars['Int'];
 };
 
+export type PageContentCollection = {
+  __typename?: 'PageContentCollection';
+  items: Array<Maybe<Banner>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
 export type PageFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<PageFilter>>>;
+  contentCollection_exists?: InputMaybe<Scalars['Boolean']>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   slug?: InputMaybe<Scalars['String']>;
   slug_contains?: InputMaybe<Scalars['String']>;
@@ -901,6 +1099,10 @@ export type Query = {
   assetCollection?: Maybe<AssetCollection>;
   author?: Maybe<Author>;
   authorCollection?: Maybe<AuthorCollection>;
+  banner?: Maybe<Banner>;
+  bannerCollection?: Maybe<BannerCollection>;
+  componentType?: Maybe<ComponentType>;
+  componentTypeCollection?: Maybe<ComponentTypeCollection>;
   entryCollection?: Maybe<EntryCollection>;
   menu?: Maybe<Menu>;
   menuCollection?: Maybe<MenuCollection>;
@@ -944,6 +1146,40 @@ export type QueryAuthorCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<AuthorFilter>;
+};
+
+
+export type QueryBannerArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<BannerOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<BannerFilter>;
+};
+
+
+export type QueryComponentTypeArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryComponentTypeCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ComponentTypeOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ComponentTypeFilter>;
 };
 
 
@@ -1091,7 +1327,7 @@ export type PageQueryVariables = Exact<{
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null } | null> } | null };
+export type PageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
 
 export const Page = gql`
@@ -1100,6 +1336,12 @@ export const Page = gql`
     items {
       title
       slug
+      contentCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
     }
   }
 }
@@ -1111,6 +1353,12 @@ export const PageDocument = gql`
     items {
       title
       slug
+      contentCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
     }
   }
 }

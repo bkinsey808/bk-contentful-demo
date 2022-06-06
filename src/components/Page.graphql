@@ -3,6 +3,12 @@ query Page($slug: String!) {
     items {
       title
       slug
+      contentCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
     }
   }
 }

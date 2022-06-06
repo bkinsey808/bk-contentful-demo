@@ -10,14 +10,7 @@ This is a developer experience focused starter project for NextJs which integrat
 
 - [NextJs](https://nextjs.org/)
 - Typescript
-- Unit testing with React Testing Library and Jest
-- E2E testing with Playwright and Jest
-  - Playwright has a more modern async syntax compared with Cypress
-  - Very nice to use Jest for both unit and e2e tests
-  - e2e tests also support WebKit
 - Component demos with Storybook
-- Unit tests and storybook stories co-located with component code
-- Test coverage report with Istanbul
 - Bundle analysis with @next/bundle-analyzer and webpack-bundle-analyzer
 - Code formatting with Prettier
   - usage enforced by lint rules

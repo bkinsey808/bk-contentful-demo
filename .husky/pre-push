@@ -7,4 +7,3 @@ echo "Running commands..."
 
 yarn lint
 yarn check-circular-deps
-yarn test
