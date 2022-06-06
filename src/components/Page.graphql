@@ -1,0 +1,8 @@
+query Page($slug: String!) {
+  pageCollection(where: { slug: $slug }) {
+    items {
+      title
+      slug
+    }
+  }
+}

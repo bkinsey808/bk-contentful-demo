@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "christian-kohler.path-intellisense",
+    "orta.vscode-jest",
+    "knisterpeter.vscode-commitizen",
+    "bradlc.vscode-tailwindcss",
+    "kisstkondoros.vscode-codemetrics",
+    "circlecodesolution.ccs-flutter-color",
+    "donjayamanne.githistory",
+    "wix.vscode-import-cost",
+    "stylelint.vscode-stylelint"
+  ]
+}
