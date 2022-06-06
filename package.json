@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "next-demo",
+  "name": "bk-contentful-demo",
   "private": true,
   "scripts": {
     "dev": "next dev",
