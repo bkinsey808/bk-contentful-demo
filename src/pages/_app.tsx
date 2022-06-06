@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import type { AppProps } from "next/app";
+import App, { AppContext, AppInitialProps, AppProps } from "next/app";
 
 import { setCssCustomProperties } from "@/theme/utils";
 
@@ -10,8 +10,14 @@ if (typeof window !== "undefined") {
   setCssCustomProperties();
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
 
-export default MyApp;
+MyApp.getInitialProps = async (appContext: AppContext) => {
+  const data: AppInitialProps = await App.getInitialProps(appContext);
+
+  return {
+    ...data.pageProps,
+  };
+};
