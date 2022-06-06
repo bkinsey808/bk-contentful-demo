@@ -1,4 +1,4 @@
-import DESIGN_TOKENS from "./designTokens";
+import DESIGN_TOKENS from './designTokens';
 
 export type DesignTokens = keyof typeof DESIGN_TOKENS;
 

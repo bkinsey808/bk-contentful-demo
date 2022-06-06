@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import Page from "@/components/Page";
+import Page from '@/components/Page';
 
 const Home: NextPage = () => {
-  return <Page />;
+  return <Page slug="home" />;
 };
 
 export default Home;

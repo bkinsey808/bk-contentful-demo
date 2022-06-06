@@ -1,23 +1,31 @@
 /* istanbul ignore file */
-import App, { AppContext, AppInitialProps, AppProps } from "next/app";
+import App, { AppContext, AppInitialProps, AppProps } from 'next/app';
 
-import { setCssCustomProperties } from "@/theme/utils";
+import { isClient } from '@/helpers/isClient';
+import { setCssCustomProperties } from '@/theme/utils';
 
-import "../styles/globals.css";
+import { Context, initialRender } from '../helpers/sse.context';
+import '../styles/globals.css';
 
-// client side only
-if (typeof window !== "undefined") {
+if (isClient()) {
   setCssCustomProperties();
 }
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Context>
+      <Component {...pageProps} />
+    </Context>
+  );
 }
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const data: AppInitialProps = await App.getInitialProps(appContext);
 
+  const sse = await initialRender(appContext, data);
+
   return {
     ...data.pageProps,
+    ...sse,
   };
 };

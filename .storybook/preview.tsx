@@ -1,19 +1,24 @@
-import * as NextImage from "next/image";
+import * as NextImage from 'next/image';
 
-import "../src/styles/globals.css";
-import { setCssCustomProperties } from "../src/theme/utils";
+import { Context } from '../src/helpers/sse.context';
+import '../src/styles/globals.css';
+import { setCssCustomProperties } from '../src/theme/utils';
 
 export const decorators = [
   (Story) => {
     // set css custom properties for every story
     setCssCustomProperties();
-    return <Story />;
+    return (
+      <Context>
+        <Story />
+      </Context>
+    );
   },
 ];
 
 export const parameters = {
   // @see https://storybook.js.org/docs/react/essentials/actions
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   // @see https://storybook.js.org/docs/react/essentials/controls#custom-control-type-matchers
   controls: {
     matchers: {
@@ -26,7 +31,7 @@ export const parameters = {
 // @see https://storybook.js.org/blog/get-started-with-storybook-and-next-js/
 const OriginalNextImage = NextImage.default;
 
-Object.defineProperty(NextImage, "default", {
+Object.defineProperty(NextImage, 'default', {
   configurable: true,
   value: (props) => <OriginalNextImage {...props} unoptimized />,
 });
