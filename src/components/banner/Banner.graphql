@@ -1,0 +1,15 @@
+query Banner($componentName: String!) {
+  bannerCollection(
+    where: {
+      AND: [
+        { componentName: $componentName }
+        # sadly, can't use __typename
+        { componentType: "Banner" }
+      ]
+    }
+  ) {
+    items {
+      height
+    }
+  }
+}

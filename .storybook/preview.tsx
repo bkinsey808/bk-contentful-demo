@@ -1,6 +1,5 @@
 import * as NextImage from 'next/image';
 
-import { Context } from '../src/helpers/sse.context';
 import '../src/styles/globals.css';
 import { setCssCustomProperties } from '../src/theme/utils';
 
@@ -8,11 +7,7 @@ export const decorators = [
   (Story) => {
     // set css custom properties for every story
     setCssCustomProperties();
-    return (
-      <Context>
-        <Story />
-      </Context>
-    );
+    return <Story />;
   },
 ];
 

@@ -15,12 +15,12 @@
     "lint": "echo \"Linting... \" && next lint && yarn lint:css",
     "lint:css": "stylelint **/*.{scss,css}",
     "lint:css:fix": "stylelint --fix **/*.{scss,css}",
-    "storybook": "start-storybook -p 6006 -s ./public",
+    "storybook": "cp ./tsconfig.storybook.json ./tsconfig.json && start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
     "commit": "cz",
     "codegen": "graphql-codegen --config codegen.yml",
-    "deploy": "netlify deploy --build --prod",
+    "deploy": "vercel",
     "prepare": "husky install"
   },
   "config": {
@@ -40,8 +40,7 @@
     "graphql-request": "^4.3.0",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "use-sse": "^2.0.1"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -64,7 +63,7 @@
     "@storybook/addon-links": "^6.4.19",
     "@storybook/builder-webpack5": "^6.4.19",
     "@storybook/manager-webpack5": "^6.4.19",
-    "@storybook/react": "^6.4.19",
+    "@storybook/react": "^6.5.7",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/node": "17.0.19",
     "@types/react": "17.0.39",

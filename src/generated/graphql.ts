@@ -1322,14 +1322,32 @@ export type CfAuthorNestedFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
+export type BannerQueryVariables = Exact<{
+  componentName: Scalars['String'];
+}>;
+
+
+export type BannerQuery = { __typename?: 'Query', bannerCollection?: { __typename?: 'BannerCollection', items: Array<{ __typename?: 'Banner', height?: string | null } | null> } | null };
+
 export type PageQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+export type PageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null } | null> } | null } | null> } | null };
 
 
+export const Banner = gql`
+    query Banner($componentName: String!) {
+  bannerCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "Banner"}]}
+  ) {
+    items {
+      height
+    }
+  }
+}
+    `;
 export const Page = gql`
     query Page($slug: String!) {
   pageCollection(where: {slug: $slug}) {
@@ -1339,7 +1357,7 @@ export const Page = gql`
       contentCollection {
         items {
           componentName
-          componentType
+          __typename
         }
       }
     }
@@ -1347,6 +1365,17 @@ export const Page = gql`
 }
     `;
 
+export const BannerDocument = gql`
+    query Banner($componentName: String!) {
+  bannerCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "Banner"}]}
+  ) {
+    items {
+      height
+    }
+  }
+}
+    `;
 export const PageDocument = gql`
     query Page($slug: String!) {
   pageCollection(where: {slug: $slug}) {
@@ -1356,7 +1385,7 @@ export const PageDocument = gql`
       contentCollection {
         items {
           componentName
-          componentType
+          __typename
         }
       }
     }
@@ -1371,6 +1400,9 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    Banner(variables: BannerQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<BannerQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<BannerQuery>(BannerDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Banner', 'query');
+    },
     Page(variables: PageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PageQuery>(PageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Page', 'query');
     }
