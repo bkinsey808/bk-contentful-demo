@@ -3,14 +3,15 @@ import { useContext, useEffect, useState } from 'react';
 import { AppContext, AppContextState, Banner } from '@/helpers/app.context';
 import { getComponentFromQuery } from '@/helpers/getComponentFromQuery';
 import { sdk } from '@/helpers/sdk';
+import { ComponentType } from '@/types';
 
 export const useComponent = (
-  componentType: 'Banner',
+  componentType: ComponentType,
   componentName: string,
   state?: AppContextState
 ) => {
   const [component, setComponent] = useState<Banner | undefined>(
-    state?.components?.Banner?.[componentName]
+    state?.components?.[componentType]?.[componentName]
   );
   const appContext = useContext(AppContext);
   const cached = appContext.components[componentType]?.[componentName];
