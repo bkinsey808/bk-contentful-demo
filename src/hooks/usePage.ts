@@ -14,7 +14,7 @@ export const usePage = (slug: string, state?: AppContextState) => {
       return;
     }
 
-    sdk.Page({ slug }).then((query) => {
+    sdk.PageItem({ slug }).then((query) => {
       const newPage = query?.pageCollection?.items?.[0];
       setPage(newPage);
       if (newPage) {

@@ -47,7 +47,7 @@ These contentful components may nest child components and those child components
 ## Getting Started
 
 ```bash
-git clone --depth=1 https://github.com/bkinsey808/next-demo.git my-project-name
+git clone --depth=1 https://github.com/bkinsey808/contentful-demo.git my-project-name
 cd my-project-name
 yarn
 ```

@@ -14,7 +14,7 @@ const Page: FC<{ slug: string; state?: AppContextState }> = ({
   return (
     <div>
       <span className="font-bold">{page?.title}</span>
-      <p>hello world</p>
+      this is the page
       <Components items={page?.contentCollection?.items} state={state} />
     </div>
   );

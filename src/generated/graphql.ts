@@ -429,75 +429,6 @@ export enum BannerOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
-export type ComponentType = Entry & {
-  __typename?: 'ComponentType';
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<ComponentTypeLinkingCollections>;
-  name?: Maybe<Scalars['String']>;
-  sys: Sys;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
-export type ComponentTypeLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
-export type ComponentTypeNameArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-export type ComponentTypeCollection = {
-  __typename?: 'ComponentTypeCollection';
-  items: Array<Maybe<ComponentType>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ComponentTypeFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ComponentTypeFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ComponentTypeFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  name?: InputMaybe<Scalars['String']>;
-  name_contains?: InputMaybe<Scalars['String']>;
-  name_exists?: InputMaybe<Scalars['Boolean']>;
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  name_not?: InputMaybe<Scalars['String']>;
-  name_not_contains?: InputMaybe<Scalars['String']>;
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type ComponentTypeLinkingCollections = {
-  __typename?: 'ComponentTypeLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type ComponentTypeLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum ComponentTypeOrder {
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
 export type ContentfulMetadata = {
   __typename?: 'ContentfulMetadata';
   tags: Array<Maybe<ContentfulTag>>;
@@ -1101,8 +1032,6 @@ export type Query = {
   authorCollection?: Maybe<AuthorCollection>;
   banner?: Maybe<Banner>;
   bannerCollection?: Maybe<BannerCollection>;
-  componentType?: Maybe<ComponentType>;
-  componentTypeCollection?: Maybe<ComponentTypeCollection>;
   entryCollection?: Maybe<EntryCollection>;
   menu?: Maybe<Menu>;
   menuCollection?: Maybe<MenuCollection>;
@@ -1163,23 +1092,6 @@ export type QueryBannerCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<BannerFilter>;
-};
-
-
-export type QueryComponentTypeArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryComponentTypeCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ComponentTypeOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ComponentTypeFilter>;
 };
 
 
@@ -1329,14 +1241,32 @@ export type BannerQueryVariables = Exact<{
 
 export type BannerQuery = { __typename?: 'Query', bannerCollection?: { __typename?: 'BannerCollection', items: Array<{ __typename?: 'Banner', height?: string | null } | null> } | null };
 
-export type PageQueryVariables = Exact<{
+export type PageFragment = { __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null } | null> } | null };
+
+export type PagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PagesQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null } | null> } | null } | null> } | null };
+
+export type PageItemQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null } | null> } | null } | null> } | null };
+export type PageItemQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null } | null> } | null } | null> } | null };
 
-
+export const Page = gql`
+    fragment page on Page {
+  title
+  slug
+  contentCollection {
+    items {
+      componentName
+      __typename
+    }
+  }
+}
+    `;
 export const Banner = gql`
     query Banner($componentName: String!) {
   bannerCollection(
@@ -1348,23 +1278,36 @@ export const Banner = gql`
   }
 }
     `;
-export const Page = gql`
-    query Page($slug: String!) {
+export const Pages = gql`
+    query Pages {
+  pageCollection {
+    items {
+      ...page
+    }
+  }
+}
+    ${Page}`;
+export const PageItem = gql`
+    query PageItem($slug: String!) {
   pageCollection(where: {slug: $slug}) {
     items {
-      title
-      slug
-      contentCollection {
-        items {
-          componentName
-          __typename
-        }
-      }
+      ...page
+    }
+  }
+}
+    ${Page}`;
+export const PageFragmentDoc = gql`
+    fragment page on Page {
+  title
+  slug
+  contentCollection {
+    items {
+      componentName
+      __typename
     }
   }
 }
     `;
-
 export const BannerDocument = gql`
     query Banner($componentName: String!) {
   bannerCollection(
@@ -1376,22 +1319,24 @@ export const BannerDocument = gql`
   }
 }
     `;
-export const PageDocument = gql`
-    query Page($slug: String!) {
-  pageCollection(where: {slug: $slug}) {
+export const PagesDocument = gql`
+    query Pages {
+  pageCollection {
     items {
-      title
-      slug
-      contentCollection {
-        items {
-          componentName
-          __typename
-        }
-      }
+      ...page
     }
   }
 }
-    `;
+    ${PageFragmentDoc}`;
+export const PageItemDocument = gql`
+    query PageItem($slug: String!) {
+  pageCollection(where: {slug: $slug}) {
+    items {
+      ...page
+    }
+  }
+}
+    ${PageFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -1403,8 +1348,11 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     Banner(variables: BannerQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<BannerQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<BannerQuery>(BannerDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Banner', 'query');
     },
-    Page(variables: PageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<PageQuery>(PageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Page', 'query');
+    Pages(variables?: PagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PagesQuery>(PagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pages', 'query');
+    },
+    PageItem(variables: PageItemQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageItemQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PageItemQuery>(PageItemDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'PageItem', 'query');
     }
   };
 }

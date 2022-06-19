@@ -1,8 +1,8 @@
 import { createContext, FC } from 'react';
 
-import { BannerQuery, PageQuery } from '@/generated/graphql';
+import { BannerQuery, PageItemQuery } from '@/generated/graphql';
 
-export type Page = NonNullable<PageQuery['pageCollection']>['items'][0];
+export type Page = NonNullable<PageItemQuery['pageCollection']>['items'][0];
 export type Banner = NonNullable<BannerQuery['bannerCollection']>['items'][0];
 
 export interface AppContextState {
