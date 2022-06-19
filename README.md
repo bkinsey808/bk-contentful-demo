@@ -1,6 +1,13 @@
-# NextJs DX-focused Starter Project
+# Contentful Demo
 
-This is a developer experience focused starter project for NextJs which integrates an opinionated set of libraries and best practices into a single cohesive whole. This starter project is informed by experience with enterprise front end projects successfully built by large teams. Specific technologies may change, but best practices stand the test of time. I hope this project inspires your own next NextJs project.
+This project demonstrates a possible approach combining NextJs, Contentful, and Storybook. The solution achieves SSG (static site generation) with the served site, and Component-Level fetching with Storybook. This means Contentful content authors can see what their content looks like on Storybook. Designers can use the same Storybook for their design system, bringing together and significantly empowering potentially non-coding users. NextJs becomes a relatively thin layer primarily responsible for implementing each component with code.
+
+The solution involves defining components on the Contentful level by requiring two additional fields per content model:
+
+- component type
+- component name (e.g. id/slug/unique instance identifier)
+
+These contentful components may nest child components and those child components may nest child components to an arbitrary depth component tree. There is no necessary naming convention for the Contentful Reference field(s) name(s).
 
 ## Features of this Project
 
