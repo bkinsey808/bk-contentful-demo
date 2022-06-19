@@ -1,14 +1,31 @@
-query Page($slug: String!) {
+fragment page on Page {
+  title
+  slug
+  pageTemplateComponent {
+    componentName
+    componentType
+  }
+  contentCollection {
+    items {
+      componentName
+      componentType
+    }
+  }
+}
+
+query Pages($limit: Int!, $skip: Int!) {
+  pageCollection(limit: $limit, skip: $skip) {
+    total
+    items {
+      ...page
+    }
+  }
+}
+
+query PageItem($slug: String!) {
   pageCollection(where: { slug: $slug }) {
     items {
-      title
-      slug
-      contentCollection {
-        items {
-          componentName
-          __typename
-        }
-      }
+      ...page
     }
   }
 }

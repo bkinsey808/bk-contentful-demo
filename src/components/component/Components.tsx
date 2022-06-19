@@ -6,7 +6,7 @@ import Component from './Component';
 
 const Components: FC<{
   items?: ({
-    __typename?: string;
+    componentType?: string | null;
     componentName?: string | null;
   } | null)[];
   state?: AppContextState;
@@ -20,7 +20,7 @@ const Components: FC<{
         <Component
           key={item?.componentName}
           name={item?.componentName}
-          type={item?.__typename}
+          type={item?.componentType}
           state={state}
         />
       );

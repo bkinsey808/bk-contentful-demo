@@ -1,0 +1,17 @@
+query PageTemplate($componentName: String!) {
+  pageTemplateCollection(
+    where: {
+      AND: [
+        { componentName: $componentName }
+        { componentType: "Page Template" }
+      ]
+    }
+  ) {
+    items {
+      header {
+        componentName
+        componentType
+      }
+    }
+  }
+}

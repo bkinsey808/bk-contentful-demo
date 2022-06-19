@@ -1,8 +1,18 @@
-import PageComponent from './Page';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import Page from './Page';
 
 export default {
-  component: PageComponent,
-  title: 'Pages/Home Page',
-};
+  component: Page,
+  title: 'Pages',
+} as ComponentMeta<typeof Page>;
 
-export const HomePage = () => <PageComponent slug="home" />;
+const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
+
+// sadly, i don't know how to generate this list of pages dynamically
+
+export const HomePage = Template.bind({});
+HomePage.args = { slug: 'home' };
+
+export const AboutPage = Template.bind({});
+AboutPage.args = { slug: 'about' };

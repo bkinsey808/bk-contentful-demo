@@ -1,8 +1,15 @@
 import { createContext, FC } from 'react';
 
-import { BannerQuery, PageQuery } from '@/generated/graphql';
+import {
+  PageTemplateQuery,
+  BannerQuery,
+  PageItemQuery,
+} from '@/generated/graphql';
 
-export type Page = NonNullable<PageQuery['pageCollection']>['items'][0];
+export type Page = NonNullable<PageItemQuery['pageCollection']>['items'][0];
+export type PageTemplate = NonNullable<
+  PageTemplateQuery['pageTemplateCollection']
+>['items'][0];
 export type Banner = NonNullable<BannerQuery['bannerCollection']>['items'][0];
 
 export interface AppContextState {
@@ -10,6 +17,9 @@ export interface AppContextState {
     [slug: string]: Page;
   };
   components: {
+    PageTemplate: {
+      [componentName: string]: PageTemplate;
+    };
     Banner: {
       [componentName: string]: Banner;
     };
@@ -19,6 +29,7 @@ export interface AppContextState {
 export const appContextDefaultState: AppContextState = {
   pages: {},
   components: {
+    PageTemplate: {},
     Banner: {},
   },
 };

@@ -1,16 +1,59 @@
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
 
-const PrimaryPage: NextPage = () => {
-  const router = useRouter();
+import Page from '@/components/page/Page';
+import { appContextDefaultState, AppContextState } from '@/helpers/app.context';
+import { recursivelySetState } from '@/helpers/recursivelySetState';
+import { sdk } from '@/helpers/sdk';
+import { useStateContext } from '@/hooks/useStateContext';
+
+const DEFAULT_SLUG = process.env.NEXT_PUBLIC_DEFAULT_SLUG || 'home';
+
+const SlugPage: NextPage<{ slug: string; state: AppContextState }> = ({
+  slug,
+  state,
+}) => {
+  useStateContext(state);
+  console.log(JSON.stringify(state, null, 2));
   return (
-    <div>
-      <h1>Primary Page</h1>
-      <h2>pathname:- {router.pathname}</h2>
-      <h2>query:- {JSON.stringify(router.query)}</h2>
-      <h2>asPath:- {router.asPath}</h2>
-    </div>
+    <>
+      <Head>
+        <title>Contentful Demo</title>
+      </Head>
+      <Page slug={slug} state={state} />
+    </>
   );
 };
 
-export default PrimaryPage;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = (params?.slug ?? DEFAULT_SLUG) as string;
+  const pageQuery = await sdk.PageItem({ slug });
+  const state = appContextDefaultState;
+  const page = pageQuery?.pageCollection?.items[0];
+
+  if (page) {
+    state.pages[slug] = page;
+    await recursivelySetState(page, state);
+  }
+
+  return {
+    props: {
+      slug,
+      state,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const pagesQuery = await sdk.Pages({ limit: 7, skip: 0 });
+
+  const paths = (pagesQuery.pageCollection?.items ?? []).map((item) => {
+    return { params: { slug: item?.slug ?? DEFAULT_SLUG } };
+  });
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+};
+
+export default SlugPage;

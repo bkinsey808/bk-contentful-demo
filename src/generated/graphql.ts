@@ -429,75 +429,6 @@ export enum BannerOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
-export type ComponentType = Entry & {
-  __typename?: 'ComponentType';
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<ComponentTypeLinkingCollections>;
-  name?: Maybe<Scalars['String']>;
-  sys: Sys;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
-export type ComponentTypeLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/componentType) */
-export type ComponentTypeNameArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-export type ComponentTypeCollection = {
-  __typename?: 'ComponentTypeCollection';
-  items: Array<Maybe<ComponentType>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ComponentTypeFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ComponentTypeFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ComponentTypeFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  name?: InputMaybe<Scalars['String']>;
-  name_contains?: InputMaybe<Scalars['String']>;
-  name_exists?: InputMaybe<Scalars['Boolean']>;
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  name_not?: InputMaybe<Scalars['String']>;
-  name_not_contains?: InputMaybe<Scalars['String']>;
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type ComponentTypeLinkingCollections = {
-  __typename?: 'ComponentTypeLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type ComponentTypeLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum ComponentTypeOrder {
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
 export type ContentfulMetadata = {
   __typename?: 'ContentfulMetadata';
   tags: Array<Maybe<ContentfulTag>>;
@@ -692,7 +623,7 @@ export type MenuFilter = {
 
 export type MenuItemsCollection = {
   __typename?: 'MenuItemsCollection';
-  items: Array<Maybe<NavigationItem>>;
+  items: Array<Maybe<Entry>>;
   limit: Scalars['Int'];
   skip: Scalars['Int'];
   total: Scalars['Int'];
@@ -722,45 +653,83 @@ export enum MenuOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationItem) */
-export type NavigationItem = Entry & {
-  __typename?: 'NavigationItem';
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItem = Entry & {
+  __typename?: 'NavigationMenuItem';
+  componentName?: Maybe<Scalars['String']>;
+  componentType?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   label?: Maybe<Scalars['String']>;
-  linkedFrom?: Maybe<NavigationItemLinkingCollections>;
+  linkedFrom?: Maybe<NavigationMenuItemLinkingCollections>;
+  navigationMenuItemsCollection?: Maybe<NavigationMenuItemNavigationMenuItemsCollection>;
   sys: Sys;
   url?: Maybe<Scalars['String']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationItem) */
-export type NavigationItemLabelArgs = {
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItemComponentNameArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationItem) */
-export type NavigationItemLinkedFromArgs = {
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItemComponentTypeArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItemLabelArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItemLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationItem) */
-export type NavigationItemUrlArgs = {
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItemNavigationMenuItemsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
+export type NavigationMenuItemUrlArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
-export type NavigationItemCollection = {
-  __typename?: 'NavigationItemCollection';
-  items: Array<Maybe<NavigationItem>>;
+export type NavigationMenuItemCollection = {
+  __typename?: 'NavigationMenuItemCollection';
+  items: Array<Maybe<NavigationMenuItem>>;
   limit: Scalars['Int'];
   skip: Scalars['Int'];
   total: Scalars['Int'];
 };
 
-export type NavigationItemFilter = {
-  AND?: InputMaybe<Array<InputMaybe<NavigationItemFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<NavigationItemFilter>>>;
+export type NavigationMenuItemFilter = {
+  AND?: InputMaybe<Array<InputMaybe<NavigationMenuItemFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<NavigationMenuItemFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   label?: InputMaybe<Scalars['String']>;
   label_contains?: InputMaybe<Scalars['String']>;
@@ -769,6 +738,7 @@ export type NavigationItemFilter = {
   label_not?: InputMaybe<Scalars['String']>;
   label_not_contains?: InputMaybe<Scalars['String']>;
   label_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  navigationMenuItemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
   sys?: InputMaybe<SysFilter>;
   url?: InputMaybe<Scalars['String']>;
   url_contains?: InputMaybe<Scalars['String']>;
@@ -779,14 +749,15 @@ export type NavigationItemFilter = {
   url_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
-export type NavigationItemLinkingCollections = {
-  __typename?: 'NavigationItemLinkingCollections';
+export type NavigationMenuItemLinkingCollections = {
+  __typename?: 'NavigationMenuItemLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
-  menuCollection?: Maybe<MenuCollection>;
+  navigationMenuItemCollection?: Maybe<NavigationMenuItemCollection>;
+  navigationMenuRootCollection?: Maybe<NavigationMenuRootCollection>;
 };
 
 
-export type NavigationItemLinkingCollectionsEntryCollectionArgs = {
+export type NavigationMenuItemLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -794,14 +765,34 @@ export type NavigationItemLinkingCollectionsEntryCollectionArgs = {
 };
 
 
-export type NavigationItemLinkingCollectionsMenuCollectionArgs = {
+export type NavigationMenuItemLinkingCollectionsNavigationMenuItemCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
 
-export enum NavigationItemOrder {
+
+export type NavigationMenuItemLinkingCollectionsNavigationMenuRootCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export type NavigationMenuItemNavigationMenuItemsCollection = {
+  __typename?: 'NavigationMenuItemNavigationMenuItemsCollection';
+  items: Array<Maybe<NavigationMenuItem>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export enum NavigationMenuItemOrder {
+  ComponentNameAsc = 'componentName_ASC',
+  ComponentNameDesc = 'componentName_DESC',
+  ComponentTypeAsc = 'componentType_ASC',
+  ComponentTypeDesc = 'componentType_DESC',
   LabelAsc = 'label_ASC',
   LabelDesc = 'label_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -816,12 +807,126 @@ export enum NavigationItemOrder {
   UrlDesc = 'url_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
+export type NavigationMenuRoot = Entry & {
+  __typename?: 'NavigationMenuRoot';
+  componentName?: Maybe<Scalars['String']>;
+  componentType?: Maybe<Scalars['String']>;
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<NavigationMenuRootLinkingCollections>;
+  navigationMenuItemsCollection?: Maybe<NavigationMenuRootNavigationMenuItemsCollection>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
+export type NavigationMenuRootComponentNameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
+export type NavigationMenuRootComponentTypeArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
+export type NavigationMenuRootLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
+export type NavigationMenuRootNavigationMenuItemsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export type NavigationMenuRootCollection = {
+  __typename?: 'NavigationMenuRootCollection';
+  items: Array<Maybe<NavigationMenuRoot>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type NavigationMenuRootFilter = {
+  AND?: InputMaybe<Array<InputMaybe<NavigationMenuRootFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<NavigationMenuRootFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  navigationMenuItemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type NavigationMenuRootLinkingCollections = {
+  __typename?: 'NavigationMenuRootLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageTemplateCollection?: Maybe<PageTemplateCollection>;
+};
+
+
+export type NavigationMenuRootLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type NavigationMenuRootLinkingCollectionsPageTemplateCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export type NavigationMenuRootNavigationMenuItemsCollection = {
+  __typename?: 'NavigationMenuRootNavigationMenuItemsCollection';
+  items: Array<Maybe<NavigationMenuItem>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export enum NavigationMenuRootOrder {
+  ComponentNameAsc = 'componentName_ASC',
+  ComponentNameDesc = 'componentName_DESC',
+  ComponentTypeAsc = 'componentType_ASC',
+  ComponentTypeDesc = 'componentType_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 /** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/page) */
 export type Page = Entry & {
   __typename?: 'Page';
   contentCollection?: Maybe<PageContentCollection>;
   contentfulMetadata: ContentfulMetadata;
   linkedFrom?: Maybe<PageLinkingCollections>;
+  pageTemplateComponent?: Maybe<PageTemplate>;
   slug?: Maybe<Scalars['String']>;
   sys: Sys;
   title?: Maybe<Scalars['String']>;
@@ -840,6 +945,13 @@ export type PageContentCollectionArgs = {
 /** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/page) */
 export type PageLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/page) */
+export type PagePageTemplateComponentArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -875,6 +987,8 @@ export type PageFilter = {
   OR?: InputMaybe<Array<InputMaybe<PageFilter>>>;
   contentCollection_exists?: InputMaybe<Scalars['Boolean']>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  pageTemplateComponent?: InputMaybe<CfPageTemplateNestedFilter>;
+  pageTemplateComponent_exists?: InputMaybe<Scalars['Boolean']>;
   slug?: InputMaybe<Scalars['String']>;
   slug_contains?: InputMaybe<Scalars['String']>;
   slug_exists?: InputMaybe<Scalars['Boolean']>;
@@ -918,6 +1032,110 @@ export enum PageOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/pageTemplate) */
+export type PageTemplate = Entry & {
+  __typename?: 'PageTemplate';
+  componentName?: Maybe<Scalars['String']>;
+  componentType?: Maybe<Scalars['String']>;
+  contentfulMetadata: ContentfulMetadata;
+  header?: Maybe<NavigationMenuRoot>;
+  linkedFrom?: Maybe<PageTemplateLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/pageTemplate) */
+export type PageTemplateComponentNameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/pageTemplate) */
+export type PageTemplateComponentTypeArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/pageTemplate) */
+export type PageTemplateHeaderArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/pageTemplate) */
+export type PageTemplateLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type PageTemplateCollection = {
+  __typename?: 'PageTemplateCollection';
+  items: Array<Maybe<PageTemplate>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type PageTemplateFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PageTemplateFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PageTemplateFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  header?: InputMaybe<CfNavigationMenuRootNestedFilter>;
+  header_exists?: InputMaybe<Scalars['Boolean']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type PageTemplateLinkingCollections = {
+  __typename?: 'PageTemplateLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
+};
+
+
+export type PageTemplateLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type PageTemplateLinkingCollectionsPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum PageTemplateOrder {
+  ComponentNameAsc = 'componentName_ASC',
+  ComponentNameDesc = 'componentName_DESC',
+  ComponentTypeAsc = 'componentType_ASC',
+  ComponentTypeDesc = 'componentType_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
 /** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/post) */
@@ -1101,15 +1319,17 @@ export type Query = {
   authorCollection?: Maybe<AuthorCollection>;
   banner?: Maybe<Banner>;
   bannerCollection?: Maybe<BannerCollection>;
-  componentType?: Maybe<ComponentType>;
-  componentTypeCollection?: Maybe<ComponentTypeCollection>;
   entryCollection?: Maybe<EntryCollection>;
   menu?: Maybe<Menu>;
   menuCollection?: Maybe<MenuCollection>;
-  navigationItem?: Maybe<NavigationItem>;
-  navigationItemCollection?: Maybe<NavigationItemCollection>;
+  navigationMenuItem?: Maybe<NavigationMenuItem>;
+  navigationMenuItemCollection?: Maybe<NavigationMenuItemCollection>;
+  navigationMenuRoot?: Maybe<NavigationMenuRoot>;
+  navigationMenuRootCollection?: Maybe<NavigationMenuRootCollection>;
   page?: Maybe<Page>;
   pageCollection?: Maybe<PageCollection>;
+  pageTemplate?: Maybe<PageTemplate>;
+  pageTemplateCollection?: Maybe<PageTemplateCollection>;
   post?: Maybe<Post>;
   postCollection?: Maybe<PostCollection>;
 };
@@ -1166,23 +1386,6 @@ export type QueryBannerCollectionArgs = {
 };
 
 
-export type QueryComponentTypeArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryComponentTypeCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ComponentTypeOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ComponentTypeFilter>;
-};
-
-
 export type QueryEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
@@ -1210,20 +1413,37 @@ export type QueryMenuCollectionArgs = {
 };
 
 
-export type QueryNavigationItemArgs = {
+export type QueryNavigationMenuItemArgs = {
   id: Scalars['String'];
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
-export type QueryNavigationItemCollectionArgs = {
+export type QueryNavigationMenuItemCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<NavigationItemOrder>>>;
+  order?: InputMaybe<Array<InputMaybe<NavigationMenuItemOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<NavigationItemFilter>;
+  where?: InputMaybe<NavigationMenuItemFilter>;
+};
+
+
+export type QueryNavigationMenuRootArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryNavigationMenuRootCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<NavigationMenuRootOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<NavigationMenuRootFilter>;
 };
 
 
@@ -1241,6 +1461,23 @@ export type QueryPageCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<PageFilter>;
+};
+
+
+export type QueryPageTemplateArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryPageTemplateCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<PageTemplateOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<PageTemplateFilter>;
 };
 
 
@@ -1322,6 +1559,50 @@ export type CfAuthorNestedFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
+export type CfNavigationMenuRootNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfNavigationMenuRootNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfNavigationMenuRootNestedFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  navigationMenuItemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type CfPageTemplateNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfPageTemplateNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfPageTemplateNestedFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  header_exists?: InputMaybe<Scalars['Boolean']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type BannerQueryVariables = Exact<{
   componentName: Scalars['String'];
 }>;
@@ -1329,14 +1610,46 @@ export type BannerQueryVariables = Exact<{
 
 export type BannerQuery = { __typename?: 'Query', bannerCollection?: { __typename?: 'BannerCollection', items: Array<{ __typename?: 'Banner', height?: string | null } | null> } | null };
 
-export type PageQueryVariables = Exact<{
+export type PageFragment = { __typename?: 'Page', title?: string | null, slug?: string | null, pageTemplateComponent?: { __typename?: 'PageTemplate', componentName?: string | null, componentType?: string | null } | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null };
+
+export type PagesQueryVariables = Exact<{
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+}>;
+
+
+export type PagesQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', total: number, items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, pageTemplateComponent?: { __typename?: 'PageTemplate', componentName?: string | null, componentType?: string | null } | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+
+export type PageItemQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null } | null> } | null } | null> } | null };
+export type PageItemQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, pageTemplateComponent?: { __typename?: 'PageTemplate', componentName?: string | null, componentType?: string | null } | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+
+export type PageTemplateQueryVariables = Exact<{
+  componentName: Scalars['String'];
+}>;
 
 
+export type PageTemplateQuery = { __typename?: 'Query', pageTemplateCollection?: { __typename?: 'PageTemplateCollection', items: Array<{ __typename?: 'PageTemplate', header?: { __typename?: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null } | null> } | null };
+
+export const Page = gql`
+    fragment page on Page {
+  title
+  slug
+  pageTemplateComponent {
+    componentName
+    componentType
+  }
+  contentCollection {
+    items {
+      componentName
+      componentType
+    }
+  }
+}
+    `;
 export const Banner = gql`
     query Banner($componentName: String!) {
   bannerCollection(
@@ -1348,23 +1661,55 @@ export const Banner = gql`
   }
 }
     `;
-export const Page = gql`
-    query Page($slug: String!) {
+export const Pages = gql`
+    query Pages($limit: Int!, $skip: Int!) {
+  pageCollection(limit: $limit, skip: $skip) {
+    total
+    items {
+      ...page
+    }
+  }
+}
+    ${Page}`;
+export const PageItem = gql`
+    query PageItem($slug: String!) {
   pageCollection(where: {slug: $slug}) {
     items {
-      title
-      slug
-      contentCollection {
-        items {
-          componentName
-          __typename
-        }
+      ...page
+    }
+  }
+}
+    ${Page}`;
+export const PageTemplate = gql`
+    query PageTemplate($componentName: String!) {
+  pageTemplateCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "Page Template"}]}
+  ) {
+    items {
+      header {
+        componentName
+        componentType
       }
     }
   }
 }
     `;
-
+export const PageFragmentDoc = gql`
+    fragment page on Page {
+  title
+  slug
+  pageTemplateComponent {
+    componentName
+    componentType
+  }
+  contentCollection {
+    items {
+      componentName
+      componentType
+    }
+  }
+}
+    `;
 export const BannerDocument = gql`
     query Banner($componentName: String!) {
   bannerCollection(
@@ -1376,17 +1721,34 @@ export const BannerDocument = gql`
   }
 }
     `;
-export const PageDocument = gql`
-    query Page($slug: String!) {
+export const PagesDocument = gql`
+    query Pages($limit: Int!, $skip: Int!) {
+  pageCollection(limit: $limit, skip: $skip) {
+    total
+    items {
+      ...page
+    }
+  }
+}
+    ${PageFragmentDoc}`;
+export const PageItemDocument = gql`
+    query PageItem($slug: String!) {
   pageCollection(where: {slug: $slug}) {
     items {
-      title
-      slug
-      contentCollection {
-        items {
-          componentName
-          __typename
-        }
+      ...page
+    }
+  }
+}
+    ${PageFragmentDoc}`;
+export const PageTemplateDocument = gql`
+    query PageTemplate($componentName: String!) {
+  pageTemplateCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "Page Template"}]}
+  ) {
+    items {
+      header {
+        componentName
+        componentType
       }
     }
   }
@@ -1403,8 +1765,14 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     Banner(variables: BannerQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<BannerQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<BannerQuery>(BannerDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Banner', 'query');
     },
-    Page(variables: PageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<PageQuery>(PageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Page', 'query');
+    Pages(variables: PagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PagesQuery>(PagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pages', 'query');
+    },
+    PageItem(variables: PageItemQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageItemQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PageItemQuery>(PageItemDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'PageItem', 'query');
+    },
+    PageTemplate(variables: PageTemplateQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PageTemplateQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PageTemplateQuery>(PageTemplateDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'PageTemplate', 'query');
     }
   };
 }
