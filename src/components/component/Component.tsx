@@ -3,6 +3,8 @@ import { FC } from 'react';
 import { AppContextState } from '@/helpers/app.context';
 
 import Banner from '../banner/Banner';
+import NavigationMenuItem from '../navigationMenuItem/NavigationMenuItem';
+import NavigationMenuRoot from '../navigationMenuRoot/NavigationMenuRoot';
 
 const Component: FC<{
   name?: string | null;
@@ -17,6 +19,10 @@ const Component: FC<{
   switch (type) {
     case 'Banner':
       return <Banner componentName={name} state={state} />;
+    case 'NavigationMenuRoot':
+      return <NavigationMenuRoot componentName={name} state={state} />;
+    case 'NavigationMenuItem':
+      return <NavigationMenuItem componentName={name} state={state} />;
   }
   return null;
 };

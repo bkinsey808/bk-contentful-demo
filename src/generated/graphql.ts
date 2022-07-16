@@ -771,11 +771,20 @@ export type NavigationMenuRootFilter = {
 export type NavigationMenuRootLinkingCollections = {
   __typename?: 'NavigationMenuRootLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
   pageTemplateCollection?: Maybe<PageTemplateCollection>;
 };
 
 
 export type NavigationMenuRootLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type NavigationMenuRootLinkingCollectionsPageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -869,11 +878,13 @@ export type PageCollection = {
 
 export type PageContentCollection = {
   __typename?: 'PageContentCollection';
-  items: Array<Maybe<Banner>>;
+  items: Array<Maybe<PageContentItem>>;
   limit: Scalars['Int'];
   skip: Scalars['Int'];
   total: Scalars['Int'];
 };
+
+export type PageContentItem = Banner | NavigationMenuRoot;
 
 export type PageFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageFilter>>>;
@@ -1289,21 +1300,21 @@ export type NavigationMenuRootQueryVariables = Exact<{
 }>;
 
 
-export type NavigationMenuRootQuery = { __typename?: 'Query', navigationMenuRootCollection?: { __typename?: 'NavigationMenuRootCollection', items: Array<{ __typename?: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null };
+export type NavigationMenuRootQuery = { __typename?: 'Query', navigationMenuRootCollection?: { __typename?: 'NavigationMenuRootCollection', items: Array<{ __typename?: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null, navigationMenuItemsCollection?: { __typename?: 'NavigationMenuRootNavigationMenuItemsCollection', items: Array<{ __typename?: 'NavigationMenuItem', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
-export type PageFragment = { __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null };
+export type PageFragment = { __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null };
 
 export type PagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+export type PagesQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
 export type PageItemQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageItemQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename?: 'Banner', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+export type PageItemQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
 export const Page = gql`
     fragment page on Page {
@@ -1311,8 +1322,15 @@ export const Page = gql`
   slug
   contentCollection {
     items {
-      componentName
-      componentType
+      __typename
+      ... on Banner {
+        componentName
+        componentType
+      }
+      ... on NavigationMenuRoot {
+        componentName
+        componentType
+      }
     }
   }
 }
@@ -1354,6 +1372,12 @@ export const NavigationMenuRoot = gql`
     items {
       componentName
       componentType
+      navigationMenuItemsCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
     }
   }
 }
@@ -1382,8 +1406,15 @@ export const PageFragmentDoc = gql`
   slug
   contentCollection {
     items {
-      componentName
-      componentType
+      __typename
+      ... on Banner {
+        componentName
+        componentType
+      }
+      ... on NavigationMenuRoot {
+        componentName
+        componentType
+      }
     }
   }
 }
@@ -1425,6 +1456,12 @@ export const NavigationMenuRootDocument = gql`
     items {
       componentName
       componentType
+      navigationMenuItemsCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
     }
   }
 }

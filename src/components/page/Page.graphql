@@ -3,8 +3,16 @@ fragment page on Page {
   slug
   contentCollection {
     items {
-      componentName
-      componentType
+      __typename
+      # unfortunately this has to be repeated for each component type that can exist on a page
+      ... on Banner {
+        componentName
+        componentType
+      }
+      ... on NavigationMenuRoot {
+        componentName
+        componentType
+      }
     }
   }
 }

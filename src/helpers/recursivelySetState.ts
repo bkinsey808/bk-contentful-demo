@@ -38,7 +38,7 @@ const setStateFromItemsArray = async (
       state.components[componentType]![componentName] = newComponent;
     }
 
-    await recursivelySetState(query, state);
+    await recursivelySetState(newComponent, state);
   }
 };
 

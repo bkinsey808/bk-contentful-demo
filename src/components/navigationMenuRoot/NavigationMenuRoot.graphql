@@ -11,6 +11,12 @@ query NavigationMenuRoot($componentName: String!) {
     items {
       componentName
       componentType
+      navigationMenuItemsCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
     }
   }
 }

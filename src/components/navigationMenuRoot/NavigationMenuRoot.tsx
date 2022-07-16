@@ -19,12 +19,13 @@ const NavigationMenuRoot: FC<{
   return (
     <div>
       Navigation Menu Root
-      {navigationMenuRoot?.navigationMenuItemsCollection?.items?.map((item) => {
+      {navigationMenuRoot?.navigationMenuItemsCollection?.items?.map((item) => (
         <NavigationMenuItem
+          key={item?.componentName}
           componentName={item?.componentName ?? 'NavigationMenuItem'}
           state={state}
-        />;
-      })}
+        />
+      ))}
     </div>
   );
 };
