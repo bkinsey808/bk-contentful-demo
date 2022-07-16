@@ -26,6 +26,7 @@
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
     "commit": "cz",
     "codegen": "graphql-codegen --config codegen.yml",
+    "contentful:export": "shx rm -f contentful/* && contentful space export --export-dir contentful",
     "prepare": "husky install"
   },
   "config": {
@@ -100,6 +101,7 @@
     "postcss-loader": "^6.2.1",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.8",
+    "shx": "^0.3.4",
     "stylelint": "^14.5.3",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
