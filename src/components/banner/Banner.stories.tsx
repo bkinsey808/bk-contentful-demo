@@ -6,3 +6,5 @@ export default {
 };
 
 export const HomeBanner = () => <Banner componentName="Home Banner" />;
+
+export const AboutBanner = () => <Banner componentName="About Banner" />;

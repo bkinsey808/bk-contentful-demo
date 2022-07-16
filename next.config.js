@@ -1,9 +1,8 @@
-const StylelintPlugin = require("stylelint-webpack-plugin");
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const ContentSecurityPolicy = `
   default-src 'self' graphql.contentful.com;
-  script-src 'self'${
-    process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
+  script-src 'self'${process.env.NODE_ENV === 'production' ? '' : " 'unsafe-eval'"
   };
   child-src example.com;
   style-src 'self' 'unsafe-inline';
@@ -11,13 +10,13 @@ const ContentSecurityPolicy = `
   img-src 'self' data:;
 `;
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
 });
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
-  productionBrowserSourceMaps: process.env.GENERATE_SOURCEMAP === "true",
+  productionBrowserSourceMaps: process.env.GENERATE_SOURCEMAP === 'true',
   webpack: (config, _options) => {
     config.plugins.push(new StylelintPlugin());
     return config;
@@ -25,11 +24,11 @@ module.exports = withBundleAnalyzer({
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: '/(.*)',
         headers: [
           {
-            key: "Content-Security-Policy",
-            value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
+            key: 'Content-Security-Policy',
+            value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
           },
         ],
       },
