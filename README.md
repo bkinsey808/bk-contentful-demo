@@ -9,6 +9,19 @@ The solution involves defining components on the Contentful level by requiring t
 
 These contentful components may nest child components and those child components may nest child components to an arbitrary depth component tree. There is no necessary naming convention for the Contentful Reference field(s) name(s).
 
+## Deployment
+
+You will need to prepare for site deployment by installing vercel cli and logging in and chromatic deployment by getting a chromatic project token and setting CHROMATIC_PROJECT_TOKEN in your .env
+
+Once set up, to deploy site to vercel and storybook to chromatic, run
+
+```bash
+yarn deploy
+```
+
+- [Demo of site](https://bk-contentful-demo.vercel.app/)
+- [Demo of storybook](https://62d2a7d38e711fa97ff596f5-lhjnkljrrp.chromatic.com/)
+
 ## Features of this Project
 
 - Perfect lighthouse score (so far...)
