@@ -1,0 +1,16 @@
+query NavigationMenuRoot($componentName: String!) {
+  navigationMenuRootCollection(
+    where: {
+      AND: [
+        { componentName: $componentName }
+        # sadly, can't use __typename
+        { componentType: "NavigationMenuRoot" }
+      ]
+    }
+  ) {
+    items {
+      componentName
+      componentType
+    }
+  }
+}

@@ -1,0 +1,23 @@
+query NavigationMenuItem($componentName: String!) {
+  navigationMenuItemCollection(
+    where: {
+      AND: [
+        { componentName: $componentName }
+        # sadly, can't use __typename
+        { componentType: "NavigationMenuItem" }
+      ]
+    }
+  ) {
+    items {
+      label
+      url
+      # sub menu
+      navigationMenuItemsCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
+    }
+  }
+}

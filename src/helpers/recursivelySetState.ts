@@ -10,15 +10,20 @@ const setStateFromItemsArray = async (
   state: AppContextState
 ) => {
   for (const item of items) {
-    if (!item || !item.componentName || !item.__typename) {
+    if (!item || !item.componentName || !item.componentType) {
       continue;
     }
 
     const componentName = item.componentName;
-    const componentType = item.__typename as ComponentType;
+    const componentType = item.componentType as ComponentType;
 
-    // component already exists
-    if (state.components[componentType][componentName]) {
+    if (!state.components[componentType]) {
+      state.components[componentType] = {};
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    if (state.components[componentType]![componentName]) {
+      // component already exists
       return;
     }
 
@@ -29,7 +34,8 @@ const setStateFromItemsArray = async (
     const newComponent = getComponentFromQuery({ query, componentType });
 
     if (newComponent) {
-      state.components[componentType][componentName] = newComponent;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      state.components[componentType]![componentName] = newComponent;
     }
 
     await recursivelySetState(query, state);

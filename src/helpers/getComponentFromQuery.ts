@@ -8,8 +8,11 @@ export const getComponentFromQuery = ({
   componentType: ComponentType;
 }) => {
   const collection =
-    query?.[`${componentType.toLowerCase()}Collection` as keyof typeof query];
+    query?.[
+      `${componentType.toLowerCase()}Collection` as unknown as keyof typeof query
+    ];
   return typeof collection === 'string'
     ? undefined
-    : collection?.items?.[0] ?? undefined;
+    : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (collection as any)?.items?.[0] ?? undefined;
 };

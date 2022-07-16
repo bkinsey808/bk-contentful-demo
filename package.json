@@ -12,7 +12,7 @@
     "build:sourcemap": "cross-env GENERATE_SOURCEMAP=true next build",
     "build:analyze": "yarn build:sourcemap && yarn analyze",
     "build": "yarn build:prepare && next build",
-    "deploy": "yarn build:prepare && vercel",
+    "deploy": "yarn build:prepare && vercel --prod",
     "start": "next start",
     "lint": "echo \"Linting... \" && next lint && yarn lint:css",
     "lint:css": "stylelint **/*.{scss,css}",
@@ -35,6 +35,7 @@
   "dependencies": {
     "@graphql-codegen/cli": "2.6.2",
     "@kodingdotninja/use-tailwind-breakpoint": "^0.0.5",
+    "@radix-ui/react-navigation-menu": "^0.1.2",
     "clsx": "^1.1.1",
     "cntl": "^1.0.0",
     "graphql": "^16.5.0",

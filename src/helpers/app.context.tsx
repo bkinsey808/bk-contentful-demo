@@ -1,26 +1,24 @@
 import { createContext, FC } from 'react';
 
-import { BannerQuery, PageItemQuery } from '@/generated/graphql';
+import { PageItemQuery } from '@/generated/graphql';
+import { Component, ComponentType } from '@/types';
 
 export type Page = NonNullable<PageItemQuery['pageCollection']>['items'][0];
-export type Banner = NonNullable<BannerQuery['bannerCollection']>['items'][0];
 
 export interface AppContextState {
   pages: {
     [slug: string]: Page;
   };
   components: {
-    Banner: {
-      [componentName: string]: Banner;
+    [key in ComponentType]?: {
+      [componentName: string]: Component;
     };
   };
 }
 
 export const appContextDefaultState: AppContextState = {
   pages: {},
-  components: {
-    Banner: {},
-  },
+  components: {},
 };
 
 export const AppContext = createContext<AppContextState>(

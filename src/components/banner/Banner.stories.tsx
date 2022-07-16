@@ -2,7 +2,7 @@ import Banner from './Banner';
 
 export default {
   component: Banner,
-  title: 'Banners/Home Banner',
+  title: 'Components/Banners',
 };
 
 export const HomeBanner = () => <Banner componentName="Home Banner" />;

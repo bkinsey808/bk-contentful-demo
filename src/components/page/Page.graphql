@@ -4,7 +4,7 @@ fragment page on Page {
   contentCollection {
     items {
       componentName
-      __typename
+      componentType
     }
   }
 }
