@@ -9,6 +9,19 @@ The solution involves defining components on the Contentful level by requiring t
 
 These contentful components may nest child components and those child components may nest child components to an arbitrary depth component tree. There is no necessary naming convention for the Contentful Reference field(s) name(s).
 
+## How It Works
+
+On the contentful side, a component type is implemented as a Content Model, and an instance of a component is implemented as an Entry. Not all models need to be component types. Component models must have at least two fields:
+
+1. componentName (unique instance identifier)
+2. componentType (default value set to the component type in camel case, and made hidden and readonly so content authors don't have to think about it)
+
+On the client side, each Contentful-driven component is implemented in with three files:
+
+1. The [ComponentType].graphql file. If the component has sub-components, only the componentType and componentName need to be fetched.
+2. The functional react component itself: [ComponentType].tsx . Each component takes only two props: the componentName, and the state. These are passed to the useComponentHook to automatically fetch the component if necessary. The state prop is only necessary to support SSG, since SSG pages cannot rely on runtime JavaScript.
+3. The [ComponentType].stories.tsx file (optional). Currently, each contentful instance of the component must be manually added to have a story for it, although maybe codegen could automate this in the future. It would be awesome if a contentful author could add a new instance of a component and it would show up in Storybook automatically. Maybe it could be possible with a webhook and codegen.
+
 ## Deployment
 
 You will need to prepare for site deployment by installing vercel cli and logging in and chromatic deployment by getting a chromatic project token and setting CHROMATIC_PROJECT_TOKEN in your .env

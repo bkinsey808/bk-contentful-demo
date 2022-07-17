@@ -1,10 +1,10 @@
-query NavigationMenuRoot($componentName: String!) {
-  navigationMenuRootCollection(
+query NavigationMenu($componentName: String!) {
+  navigationMenuCollection(
     where: {
       AND: [
         { componentName: $componentName }
         # sadly, can't use __typename
-        { componentType: "NavigationMenuRoot" }
+        { componentType: "NavigationMenu" }
       ]
     }
   ) {

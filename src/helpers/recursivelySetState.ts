@@ -5,8 +5,7 @@ import { getComponentFromQuery } from './getComponentFromQuery';
 import { sdk } from './sdk';
 
 const setStateFromItemsArray = async (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  items: any[],
+  items: { componentName: string; componentType: ComponentType }[],
   state: AppContextState
 ) => {
   for (const item of items) {
@@ -14,8 +13,7 @@ const setStateFromItemsArray = async (
       continue;
     }
 
-    const componentName = item.componentName;
-    const componentType = item.componentType as ComponentType;
+    const { componentType, componentName } = item;
 
     if (!state.components[componentType]) {
       state.components[componentType] = {};
@@ -47,6 +45,9 @@ export const recursivelySetState = async (
   item: Record<string, unknown>,
   state: AppContextState
 ) => {
+  if (!item) {
+    return;
+  }
   for (const [key, value] of Object.entries(item)) {
     if (key === 'items' && Array.isArray(value)) {
       await setStateFromItemsArray(value, state);

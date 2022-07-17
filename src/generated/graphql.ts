@@ -474,77 +474,73 @@ export type ImageTransformOptions = {
   width?: InputMaybe<Scalars['Dimension']>;
 };
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/menu) */
-export type Menu = Entry & {
-  __typename?: 'Menu';
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenu) */
+export type NavigationMenu = Entry & {
+  __typename?: 'NavigationMenu';
+  componentName?: Maybe<Scalars['String']>;
+  componentType?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
-  itemsCollection?: Maybe<MenuItemsCollection>;
-  linkedFrom?: Maybe<MenuLinkingCollections>;
+  linkedFrom?: Maybe<NavigationMenuLinkingCollections>;
+  navigationMenuItemsCollection?: Maybe<NavigationMenuNavigationMenuItemsCollection>;
   sys: Sys;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/menu) */
-export type MenuItemsCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenu) */
+export type NavigationMenuComponentNameArgs = {
   locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/menu) */
-export type MenuLinkedFromArgs = {
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenu) */
+export type NavigationMenuComponentTypeArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenu) */
+export type NavigationMenuLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
-export type MenuCollection = {
-  __typename?: 'MenuCollection';
-  items: Array<Maybe<Menu>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
 
-export type MenuFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MenuFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MenuFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  itemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type MenuItemsCollection = {
-  __typename?: 'MenuItemsCollection';
-  items: Array<Maybe<Entry>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type MenuLinkingCollections = {
-  __typename?: 'MenuLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type MenuLinkingCollectionsEntryCollectionArgs = {
+/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenu) */
+export type NavigationMenuNavigationMenuItemsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
 
-export enum MenuOrder {
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
+export type NavigationMenuCollection = {
+  __typename?: 'NavigationMenuCollection';
+  items: Array<Maybe<NavigationMenu>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type NavigationMenuFilter = {
+  AND?: InputMaybe<Array<InputMaybe<NavigationMenuFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<NavigationMenuFilter>>>;
+  componentName?: InputMaybe<Scalars['String']>;
+  componentName_contains?: InputMaybe<Scalars['String']>;
+  componentName_exists?: InputMaybe<Scalars['Boolean']>;
+  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentName_not?: InputMaybe<Scalars['String']>;
+  componentName_not_contains?: InputMaybe<Scalars['String']>;
+  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType?: InputMaybe<Scalars['String']>;
+  componentType_contains?: InputMaybe<Scalars['String']>;
+  componentType_exists?: InputMaybe<Scalars['Boolean']>;
+  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  componentType_not?: InputMaybe<Scalars['String']>;
+  componentType_not_contains?: InputMaybe<Scalars['String']>;
+  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  navigationMenuItemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  sys?: InputMaybe<SysFilter>;
+};
 
 /** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuItem) */
 export type NavigationMenuItem = Entry & {
@@ -645,8 +641,8 @@ export type NavigationMenuItemFilter = {
 export type NavigationMenuItemLinkingCollections = {
   __typename?: 'NavigationMenuItemLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
+  navigationMenuCollection?: Maybe<NavigationMenuCollection>;
   navigationMenuItemCollection?: Maybe<NavigationMenuItemCollection>;
-  navigationMenuRootCollection?: Maybe<NavigationMenuRootCollection>;
 };
 
 
@@ -658,7 +654,7 @@ export type NavigationMenuItemLinkingCollectionsEntryCollectionArgs = {
 };
 
 
-export type NavigationMenuItemLinkingCollectionsNavigationMenuItemCollectionArgs = {
+export type NavigationMenuItemLinkingCollectionsNavigationMenuCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -666,7 +662,7 @@ export type NavigationMenuItemLinkingCollectionsNavigationMenuItemCollectionArgs
 };
 
 
-export type NavigationMenuItemLinkingCollectionsNavigationMenuRootCollectionArgs = {
+export type NavigationMenuItemLinkingCollectionsNavigationMenuItemCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -700,83 +696,14 @@ export enum NavigationMenuItemOrder {
   UrlDesc = 'url_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
-export type NavigationMenuRoot = Entry & {
-  __typename?: 'NavigationMenuRoot';
-  componentName?: Maybe<Scalars['String']>;
-  componentType?: Maybe<Scalars['String']>;
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<NavigationMenuRootLinkingCollections>;
-  navigationMenuItemsCollection?: Maybe<NavigationMenuRootNavigationMenuItemsCollection>;
-  sys: Sys;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
-export type NavigationMenuRootComponentNameArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
-export type NavigationMenuRootComponentTypeArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
-export type NavigationMenuRootLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/clgjazsezfiu/content_types/navigationMenuRoot) */
-export type NavigationMenuRootNavigationMenuItemsCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export type NavigationMenuRootCollection = {
-  __typename?: 'NavigationMenuRootCollection';
-  items: Array<Maybe<NavigationMenuRoot>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type NavigationMenuRootFilter = {
-  AND?: InputMaybe<Array<InputMaybe<NavigationMenuRootFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<NavigationMenuRootFilter>>>;
-  componentName?: InputMaybe<Scalars['String']>;
-  componentName_contains?: InputMaybe<Scalars['String']>;
-  componentName_exists?: InputMaybe<Scalars['Boolean']>;
-  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  componentName_not?: InputMaybe<Scalars['String']>;
-  componentName_not_contains?: InputMaybe<Scalars['String']>;
-  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  componentType?: InputMaybe<Scalars['String']>;
-  componentType_contains?: InputMaybe<Scalars['String']>;
-  componentType_exists?: InputMaybe<Scalars['Boolean']>;
-  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  componentType_not?: InputMaybe<Scalars['String']>;
-  componentType_not_contains?: InputMaybe<Scalars['String']>;
-  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  navigationMenuItemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type NavigationMenuRootLinkingCollections = {
-  __typename?: 'NavigationMenuRootLinkingCollections';
+export type NavigationMenuLinkingCollections = {
+  __typename?: 'NavigationMenuLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
-  pageTemplateCollection?: Maybe<PageTemplateCollection>;
 };
 
 
-export type NavigationMenuRootLinkingCollectionsEntryCollectionArgs = {
+export type NavigationMenuLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -784,30 +711,22 @@ export type NavigationMenuRootLinkingCollectionsEntryCollectionArgs = {
 };
 
 
-export type NavigationMenuRootLinkingCollectionsPageCollectionArgs = {
+export type NavigationMenuLinkingCollectionsPageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
 
-
-export type NavigationMenuRootLinkingCollectionsPageTemplateCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export type NavigationMenuRootNavigationMenuItemsCollection = {
-  __typename?: 'NavigationMenuRootNavigationMenuItemsCollection';
+export type NavigationMenuNavigationMenuItemsCollection = {
+  __typename?: 'NavigationMenuNavigationMenuItemsCollection';
   items: Array<Maybe<NavigationMenuItem>>;
   limit: Scalars['Int'];
   skip: Scalars['Int'];
   total: Scalars['Int'];
 };
 
-export enum NavigationMenuRootOrder {
+export enum NavigationMenuOrder {
   ComponentNameAsc = 'componentName_ASC',
   ComponentNameDesc = 'componentName_DESC',
   ComponentTypeAsc = 'componentType_ASC',
@@ -884,7 +803,7 @@ export type PageContentCollection = {
   total: Scalars['Int'];
 };
 
-export type PageContentItem = Banner | NavigationMenuRoot;
+export type PageContentItem = Banner | NavigationMenu;
 
 export type PageFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageFilter>>>;
@@ -944,7 +863,7 @@ export type PageTemplate = Entry & {
   componentName?: Maybe<Scalars['String']>;
   componentType?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
-  header?: Maybe<NavigationMenuRoot>;
+  header?: Maybe<Entry>;
   linkedFrom?: Maybe<PageTemplateLinkingCollections>;
   sys: Sys;
 };
@@ -1000,7 +919,6 @@ export type PageTemplateFilter = {
   componentType_not_contains?: InputMaybe<Scalars['String']>;
   componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  header?: InputMaybe<CfNavigationMenuRootNestedFilter>;
   header_exists?: InputMaybe<Scalars['Boolean']>;
   sys?: InputMaybe<SysFilter>;
 };
@@ -1049,12 +967,10 @@ export type Query = {
   banner?: Maybe<Banner>;
   bannerCollection?: Maybe<BannerCollection>;
   entryCollection?: Maybe<EntryCollection>;
-  menu?: Maybe<Menu>;
-  menuCollection?: Maybe<MenuCollection>;
+  navigationMenu?: Maybe<NavigationMenu>;
+  navigationMenuCollection?: Maybe<NavigationMenuCollection>;
   navigationMenuItem?: Maybe<NavigationMenuItem>;
   navigationMenuItemCollection?: Maybe<NavigationMenuItemCollection>;
-  navigationMenuRoot?: Maybe<NavigationMenuRoot>;
-  navigationMenuRootCollection?: Maybe<NavigationMenuRootCollection>;
   page?: Maybe<Page>;
   pageCollection?: Maybe<PageCollection>;
   pageTemplate?: Maybe<PageTemplate>;
@@ -1106,20 +1022,20 @@ export type QueryEntryCollectionArgs = {
 };
 
 
-export type QueryMenuArgs = {
+export type QueryNavigationMenuArgs = {
   id: Scalars['String'];
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
-export type QueryMenuCollectionArgs = {
+export type QueryNavigationMenuCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<MenuOrder>>>;
+  order?: InputMaybe<Array<InputMaybe<NavigationMenuOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<MenuFilter>;
+  where?: InputMaybe<NavigationMenuFilter>;
 };
 
 
@@ -1137,23 +1053,6 @@ export type QueryNavigationMenuItemCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<NavigationMenuItemFilter>;
-};
-
-
-export type QueryNavigationMenuRootArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryNavigationMenuRootCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<NavigationMenuRootOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<NavigationMenuRootFilter>;
 };
 
 
@@ -1237,28 +1136,6 @@ export type SysFilter = {
   publishedVersion_not_in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
 };
 
-export type CfNavigationMenuRootNestedFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CfNavigationMenuRootNestedFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CfNavigationMenuRootNestedFilter>>>;
-  componentName?: InputMaybe<Scalars['String']>;
-  componentName_contains?: InputMaybe<Scalars['String']>;
-  componentName_exists?: InputMaybe<Scalars['Boolean']>;
-  componentName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  componentName_not?: InputMaybe<Scalars['String']>;
-  componentName_not_contains?: InputMaybe<Scalars['String']>;
-  componentName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  componentType?: InputMaybe<Scalars['String']>;
-  componentType_contains?: InputMaybe<Scalars['String']>;
-  componentType_exists?: InputMaybe<Scalars['Boolean']>;
-  componentType_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  componentType_not?: InputMaybe<Scalars['String']>;
-  componentType_not_contains?: InputMaybe<Scalars['String']>;
-  componentType_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  navigationMenuItemsCollection_exists?: InputMaybe<Scalars['Boolean']>;
-  sys?: InputMaybe<SysFilter>;
-};
-
 export type CfPageTemplateNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfPageTemplateNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfPageTemplateNestedFilter>>>;
@@ -1288,6 +1165,13 @@ export type BannerQueryVariables = Exact<{
 
 export type BannerQuery = { __typename?: 'Query', bannerCollection?: { __typename?: 'BannerCollection', items: Array<{ __typename?: 'Banner', height?: string | null } | null> } | null };
 
+export type NavigationMenuQueryVariables = Exact<{
+  componentName: Scalars['String'];
+}>;
+
+
+export type NavigationMenuQuery = { __typename?: 'Query', navigationMenuCollection?: { __typename?: 'NavigationMenuCollection', items: Array<{ __typename?: 'NavigationMenu', componentName?: string | null, componentType?: string | null, navigationMenuItemsCollection?: { __typename?: 'NavigationMenuNavigationMenuItemsCollection', items: Array<{ __typename?: 'NavigationMenuItem', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+
 export type NavigationMenuItemQueryVariables = Exact<{
   componentName: Scalars['String'];
 }>;
@@ -1295,26 +1179,19 @@ export type NavigationMenuItemQueryVariables = Exact<{
 
 export type NavigationMenuItemQuery = { __typename?: 'Query', navigationMenuItemCollection?: { __typename?: 'NavigationMenuItemCollection', items: Array<{ __typename?: 'NavigationMenuItem', label?: string | null, url?: string | null, navigationMenuItemsCollection?: { __typename?: 'NavigationMenuItemNavigationMenuItemsCollection', items: Array<{ __typename?: 'NavigationMenuItem', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
-export type NavigationMenuRootQueryVariables = Exact<{
-  componentName: Scalars['String'];
-}>;
-
-
-export type NavigationMenuRootQuery = { __typename?: 'Query', navigationMenuRootCollection?: { __typename?: 'NavigationMenuRootCollection', items: Array<{ __typename?: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null, navigationMenuItemsCollection?: { __typename?: 'NavigationMenuRootNavigationMenuItemsCollection', items: Array<{ __typename?: 'NavigationMenuItem', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
-
-export type PageFragment = { __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null };
+export type PageFragment = { __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenu', componentName?: string | null, componentType?: string | null } | null> } | null };
 
 export type PagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+export type PagesQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenu', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
 export type PageItemQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageItemQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenuRoot', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
+export type PageItemQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename?: 'Page', title?: string | null, slug?: string | null, contentCollection?: { __typename?: 'PageContentCollection', items: Array<{ __typename: 'Banner', componentName?: string | null, componentType?: string | null } | { __typename: 'NavigationMenu', componentName?: string | null, componentType?: string | null } | null> } | null } | null> } | null };
 
 export const Page = gql`
     fragment page on Page {
@@ -1327,7 +1204,7 @@ export const Page = gql`
         componentName
         componentType
       }
-      ... on NavigationMenuRoot {
+      ... on NavigationMenu {
         componentName
         componentType
       }
@@ -1346,14 +1223,14 @@ export const Banner = gql`
   }
 }
     `;
-export const NavigationMenuItem = gql`
-    query NavigationMenuItem($componentName: String!) {
-  navigationMenuItemCollection(
-    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenuItem"}]}
+export const NavigationMenu = gql`
+    query NavigationMenu($componentName: String!) {
+  navigationMenuCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenu"}]}
   ) {
     items {
-      label
-      url
+      componentName
+      componentType
       navigationMenuItemsCollection {
         items {
           componentName
@@ -1364,14 +1241,14 @@ export const NavigationMenuItem = gql`
   }
 }
     `;
-export const NavigationMenuRoot = gql`
-    query NavigationMenuRoot($componentName: String!) {
-  navigationMenuRootCollection(
-    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenuRoot"}]}
+export const NavigationMenuItem = gql`
+    query NavigationMenuItem($componentName: String!) {
+  navigationMenuItemCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenuItem"}]}
   ) {
     items {
-      componentName
-      componentType
+      label
+      url
       navigationMenuItemsCollection {
         items {
           componentName
@@ -1411,7 +1288,7 @@ export const PageFragmentDoc = gql`
         componentName
         componentType
       }
-      ... on NavigationMenuRoot {
+      ... on NavigationMenu {
         componentName
         componentType
       }
@@ -1430,14 +1307,14 @@ export const BannerDocument = gql`
   }
 }
     `;
-export const NavigationMenuItemDocument = gql`
-    query NavigationMenuItem($componentName: String!) {
-  navigationMenuItemCollection(
-    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenuItem"}]}
+export const NavigationMenuDocument = gql`
+    query NavigationMenu($componentName: String!) {
+  navigationMenuCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenu"}]}
   ) {
     items {
-      label
-      url
+      componentName
+      componentType
       navigationMenuItemsCollection {
         items {
           componentName
@@ -1448,14 +1325,14 @@ export const NavigationMenuItemDocument = gql`
   }
 }
     `;
-export const NavigationMenuRootDocument = gql`
-    query NavigationMenuRoot($componentName: String!) {
-  navigationMenuRootCollection(
-    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenuRoot"}]}
+export const NavigationMenuItemDocument = gql`
+    query NavigationMenuItem($componentName: String!) {
+  navigationMenuItemCollection(
+    where: {AND: [{componentName: $componentName}, {componentType: "NavigationMenuItem"}]}
   ) {
     items {
-      componentName
-      componentType
+      label
+      url
       navigationMenuItemsCollection {
         items {
           componentName
@@ -1495,11 +1372,11 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     Banner(variables: BannerQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<BannerQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<BannerQuery>(BannerDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Banner', 'query');
     },
+    NavigationMenu(variables: NavigationMenuQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NavigationMenuQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<NavigationMenuQuery>(NavigationMenuDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NavigationMenu', 'query');
+    },
     NavigationMenuItem(variables: NavigationMenuItemQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NavigationMenuItemQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NavigationMenuItemQuery>(NavigationMenuItemDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NavigationMenuItem', 'query');
-    },
-    NavigationMenuRoot(variables: NavigationMenuRootQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NavigationMenuRootQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<NavigationMenuRootQuery>(NavigationMenuRootDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NavigationMenuRoot', 'query');
     },
     Pages(variables?: PagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PagesQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PagesQuery>(PagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pages', 'query');

@@ -1,4 +1,4 @@
-const DESIGN_TOKENS = require("./src/theme/designTokens");
+const DESIGN_TOKENS = require('./src/theme/designTokens');
 
 /** If true, tailwind will use css custom properties (unofficially known as css variables).
  *  This is easier for browser debugging and tracing,
@@ -15,20 +15,20 @@ const filterDesignTokens = (prefix) =>
         ...obj,
         [key]: USE_CSS_CUSTOM_PROPERTIES
           ? // easier to debug and trace with css variables
-            `var(--${key})`
+          `var(--${key})`
           : // can see color square in code editor
-            DESIGN_TOKENS[key],
+          DESIGN_TOKENS[key],
       }),
       {}
     );
 
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: filterDesignTokens("color"),
-      spacing: filterDesignTokens("spacing"),
+      colors: filterDesignTokens('color'),
+      spacing: filterDesignTokens('spacing'),
     },
   },
-  darkMode: "class",
+  darkMode: 'class',
 };

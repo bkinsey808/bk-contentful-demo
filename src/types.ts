@@ -3,16 +3,13 @@ import {
   BannerQuery,
   NavigationMenuItem,
   NavigationMenuItemQuery,
-  NavigationMenuRoot,
-  NavigationMenuRootQuery,
+  NavigationMenu,
+  NavigationMenuQuery,
 } from './generated/graphql';
 import { sdk } from './helpers/sdk';
 
 export type ComponentType = keyof Omit<typeof sdk, 'PageItem' | 'Pages'>;
 
-export type Query =
-  | BannerQuery
-  | NavigationMenuRootQuery
-  | NavigationMenuItemQuery;
+export type Query = BannerQuery | NavigationMenuQuery | NavigationMenuItemQuery;
 
-export type Component = Banner | NavigationMenuRoot | NavigationMenuItem;
+export type Component = Banner | NavigationMenu | NavigationMenuItem;
