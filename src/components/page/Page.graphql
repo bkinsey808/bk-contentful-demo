@@ -1,6 +1,10 @@
 fragment page on Page {
   title
   slug
+  pageTemplateComponent {
+    componentName
+    componentType
+  }
   contentCollection {
     items {
       __typename
@@ -10,6 +14,10 @@ fragment page on Page {
         componentType
       }
       ... on NavigationMenu {
+        componentName
+        componentType
+      }
+      ... on PageTemplate {
         componentName
         componentType
       }

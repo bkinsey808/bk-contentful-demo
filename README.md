@@ -22,13 +22,13 @@ On the contentful side, a component type is implemented as a Content Model, and 
 
 On the client side, each Contentful-driven component is implemented in with three files:
 
-1. The [ComponentType].graphql file. If the component has sub-components, only the componentType and componentName need to be fetched. I recommend starting with this file first, and then running `yarn codegen` to get the generated types set up for the next file.
+1. The [ComponentType].graphql file. If the component has sub-components, only the componentType and componentName of those need to be fetched. I recommend starting with this file first, and then running `yarn codegen` to get the generated types set up for the next file.
 2. The functional react component itself: [ComponentType].tsx . Each Contentful-driven component must take at least two props: the componentName, and the state. These are passed to the useComponent hook to automatically fetch the component content if necessary. The state prop is only necessary to support SSG, since SSG pages cannot rely on runtime JavaScript.
 3. The [ComponentType].stories.tsx file (optional). Currently, each contentful instance of the component must be manually added to have a story for it, although maybe codegen could automate this in the future. It would be awesome if a contentful author could add a new instance of a component and it would show up in Storybook automatically. Maybe it could be possible with a webhook and codegen. Also, in the future it'd be 🔥 if we could pre-generate the content (similar to SSR) instead of requiring a runtime fetch.
 
 The magic that makes SSG work for the site is that on the page level we recursively fetch the component tree content directly from Contentful. (We don't need to worry about rendering the react site to determine what fetches are necessary like in some other component-level fetching solutions that batch on the page-level). In practice, the build seems plenty fast, but of course it will slow down as the number of component instances increase, especially with very deeply nested trees of components.
 
-In the future it may be necessary to monitor Contentful responses in case the queries are rate limited. I've found that components need to be relatively simple and few in number for any given parent component in order to not trigger Contentful's rate limiting on the free community tier. If Contentful's rate limiting code is triggered, code could be written to limit the results per query and run multiple limited queries instead of a single unlimited one.
+In the future it may be necessary to monitor Contentful responses in case the queries are rate limited. I've found that components need to be relatively simple and few in number for any given parent component in order to not trigger Contentful's rate limiting on the free community tier. If Contentful's rate limiting is triggered, code could be written to limit the results per query and run multiple limited queries instead of a single unlimited one.
 
 ## Deployment
 

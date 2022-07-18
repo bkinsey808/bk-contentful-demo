@@ -1,0 +1,20 @@
+query Palette($componentName: String!) {
+  paletteCollection(
+    where: {
+      AND: [
+        { componentName: $componentName }
+        # sadly, can't use __typename
+        { componentType: "Palette" }
+      ]
+    }
+  ) {
+    items {
+      colorsCollection {
+        items {
+          componentName
+          componentType
+        }
+      }
+    }
+  }
+}

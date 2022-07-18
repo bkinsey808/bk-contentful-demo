@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageQuery = await sdk.PageItem({ slug });
   const state = appContextDefaultState;
   const page = pageQuery?.pageCollection?.items[0];
-
+  console.log({ slug });
   if (page) {
     state.pages[slug] = page;
     await recursivelySetState(page, state);
@@ -50,6 +50,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = (pagesQuery.pageCollection?.items ?? []).map((item) => {
     return { params: { slug: item?.slug ?? DEFAULT_SLUG } };
   });
+
+  console.log({ i: pagesQuery.pageCollection?.items });
   return {
     paths,
     fallback: 'blocking',

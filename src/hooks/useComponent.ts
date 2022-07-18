@@ -17,6 +17,9 @@ export const useComponent = <T extends Component>(
   const cached = appContext.components[componentType]?.[componentName];
 
   useEffect(() => {
+    if (component) {
+      return;
+    }
     if (cached && component !== cached) {
       setComponent(cached);
       return;

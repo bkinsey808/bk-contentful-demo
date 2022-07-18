@@ -23,13 +23,16 @@ const Home: NextPage<{ state: AppContextState }> = ({ state }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  console.log('get static props');
   const query = await sdk.PageItem({ slug: DEFAULT_SLUG });
   const state = appContextDefaultState;
   const page = query?.pageCollection?.items[0];
 
   if (page) {
+    console.log('setting default slug', DEFAULT_SLUG);
     state.pages[DEFAULT_SLUG] = page;
     await recursivelySetState(page, state);
+    console.log({ state });
   }
 
   return {

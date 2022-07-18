@@ -9,7 +9,10 @@ export const usePage = (slug: string, state?: AppContextState) => {
   const cached = appContext.pages[slug];
 
   useEffect(() => {
-    if (cached && page !== cached) {
+    if (page) {
+      return;
+    }
+    if (cached) {
       setPage(cached);
       return;
     }
