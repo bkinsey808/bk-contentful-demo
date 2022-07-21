@@ -43,5 +43,7 @@ playwright-report/
 
 # storybook
 storybook-static
+build-storybook.log
+
 # Local Netlify folder
 .netlify

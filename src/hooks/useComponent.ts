@@ -20,7 +20,7 @@ export const useComponent = <T extends Component>(
     if (component) {
       return;
     }
-    if (cached && component !== cached) {
+    if (cached) {
       setComponent(cached);
       return;
     }

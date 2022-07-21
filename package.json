@@ -82,6 +82,7 @@
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.7.0",
+    "chromatic-cli": "^1.0.0",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "dotenv-cli": "^6.0.0",

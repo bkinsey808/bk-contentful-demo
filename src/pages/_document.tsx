@@ -12,7 +12,7 @@ const Body: FC = () => {
 
 const Document: FC = () => {
   return (
-    <Html lang="en" className="scrollbar-gutter-stable">
+    <Html lang="en">
       <Head />
       <Body />
     </Html>
