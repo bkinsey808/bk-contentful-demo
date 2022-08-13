@@ -1,4 +1,5 @@
 {
+  "Page": "src/components/page/Page",
   "Banner": "src/components/banner/Banner",
   "NavigationMenu": "src/components/navigationMenu/NavigationMenu"
 }

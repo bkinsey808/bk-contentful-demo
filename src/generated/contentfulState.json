@@ -28,7 +28,7 @@
       "fields": {
         "componentName": "string",
         "componentType": "string",
-        "palette": "Link"
+        "theme": "Link"
       }
     },
     "NavigationMenu": {
@@ -38,33 +38,15 @@
         "navigationMenuItems": "Array"
       }
     },
-    "Palette": {
-      "fields": {
-        "componentName": "string",
-        "componentType": "string",
-        "colors": "Array"
-      }
-    },
-    "Color": {
-      "fields": {
-        "componentName": "string",
-        "componentType": "string",
-        "colorCode": "string",
-        "paletteRole": "Link",
-        "lightModeColor": "string",
-        "darkModeColor": "string"
-      }
-    },
-    "PaletteRole": {
-      "fields": {
-        "name": "string",
-        "code": "string"
-      }
-    },
     "Daughter": {
       "fields": {
         "fieldOne": "string",
         "fieldTwo": "string"
+      }
+    },
+    "Theme": {
+      "fields": {
+        "id": "string"
       }
     }
   },
@@ -256,11 +238,11 @@
         "Default Page Template": {
           "componentName": "Default Page Template",
           "componentType": "PageTemplate",
-          "palette": {
+          "theme": {
             "sys": {
               "type": "Link",
               "linkType": "Entry",
-              "id": "2BVurkWHzeKfilkcA1d4X5"
+              "id": "52vycZVoJxpBNUOPqtyh8m"
             }
           }
         }
@@ -291,130 +273,20 @@
         }
       }
     },
-    "Palette": {
-      "idField": "componentName",
-      "items": {
-        "Monochrome": {
-          "componentName": "Monochrome",
-          "componentType": "Palette",
-          "colors": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "x1Xxp65gRI0OlqVOcck6i"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "24j1W00UEnmRBpJhbsTPWM"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "ika4IEZ1u2X6ZpZ1O2wHP"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "17py17WnmfyEocODSN6mJk"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "Color": {
-      "idField": "componentName",
-      "items": {
-        "Monochrome Primary": {
-          "componentName": "Monochrome Primary",
-          "componentType": "Color",
-          "colorCode": "monochrome-primary",
-          "paletteRole": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "HudhQqUc1DVAquTVdBJKF"
-            }
-          },
-          "lightModeColor": "black",
-          "darkModeColor": "white"
-        },
-        "Monochrome Primary Background": {
-          "componentName": "Monochrome Primary Background",
-          "componentType": "Color",
-          "colorCode": "monochrome-primary-background",
-          "paletteRole": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "9cfpcqSiyxUlTpKOLupYT"
-            }
-          },
-          "lightModeColor": "white",
-          "darkModeColor": "black"
-        },
-        "Monochrome Accent": {
-          "componentName": "Monochrome Accent",
-          "componentType": "Color",
-          "colorCode": "monochrome-accent",
-          "paletteRole": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "24eU2fCJ1YeXeER8EITEe5"
-            }
-          },
-          "lightModeColor": "darkgray",
-          "darkModeColor": "lightgray"
-        },
-        "Monochrome Accent Background": {
-          "componentName": "Monochrome Accent Background",
-          "componentType": "Color",
-          "colorCode": "monochrome-accent-background",
-          "paletteRole": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "5p2NXD44nNBCzKsFXnC9Rl"
-            }
-          },
-          "lightModeColor": "lightgray",
-          "darkModeColor": "darkgray"
-        }
-      }
-    },
-    "PaletteRole": {
-      "idField": "name",
-      "items": {
-        "Primary": {
-          "name": "Primary",
-          "code": "primary"
-        },
-        "Primary Background": {
-          "name": "Primary Background",
-          "code": "primary-background"
-        },
-        "Accent": {
-          "name": "Accent",
-          "code": "accent"
-        },
-        "Accent Background": {
-          "name": "Accent Background",
-          "code": "accent-background"
-        }
-      }
-    },
     "Daughter": {
       "idField": "fieldTwo",
       "items": {}
+    },
+    "Theme": {
+      "idField": "id",
+      "items": {
+        "Default": {
+          "id": "Default"
+        },
+        "Dark": {
+          "id": "Dark"
+        }
+      }
     }
   },
   "componentReferences": {
@@ -478,41 +350,13 @@
       "type": "NavigationMenu",
       "id": "Header Menu"
     },
-    "HudhQqUc1DVAquTVdBJKF": {
-      "type": "PaletteRole",
-      "id": "Primary"
+    "52vycZVoJxpBNUOPqtyh8m": {
+      "type": "Theme",
+      "id": "Default"
     },
-    "9cfpcqSiyxUlTpKOLupYT": {
-      "type": "PaletteRole",
-      "id": "Primary Background"
-    },
-    "24eU2fCJ1YeXeER8EITEe5": {
-      "type": "PaletteRole",
-      "id": "Accent"
-    },
-    "5p2NXD44nNBCzKsFXnC9Rl": {
-      "type": "PaletteRole",
-      "id": "Accent Background"
-    },
-    "x1Xxp65gRI0OlqVOcck6i": {
-      "type": "Color",
-      "id": "Monochrome Primary"
-    },
-    "24j1W00UEnmRBpJhbsTPWM": {
-      "type": "Color",
-      "id": "Monochrome Primary Background"
-    },
-    "ika4IEZ1u2X6ZpZ1O2wHP": {
-      "type": "Color",
-      "id": "Monochrome Accent"
-    },
-    "17py17WnmfyEocODSN6mJk": {
-      "type": "Color",
-      "id": "Monochrome Accent Background"
-    },
-    "2BVurkWHzeKfilkcA1d4X5": {
-      "type": "Palette",
-      "id": "Monochrome"
+    "1CazBwEh9jxkxsSHPpsqVy": {
+      "type": "Theme",
+      "id": "Dark"
     }
   }
 }

@@ -350,7 +350,7 @@
         "id": "pageTemplate",
         "type": "ContentType",
         "createdAt": "2022-06-21T01:59:44.015Z",
-        "updatedAt": "2022-07-17T20:46:56.136Z",
+        "updatedAt": "2022-08-13T07:56:19.170Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -358,8 +358,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "publishedAt": "2022-07-17T20:46:56.136Z",
+        "publishedVersion": 23,
+        "publishedAt": "2022-08-13T07:56:19.170Z",
         "firstPublishedAt": "2022-06-21T01:59:44.351Z",
         "createdBy": {
           "sys": {
@@ -375,8 +375,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 9,
-        "version": 18,
+        "publishedCounter": 12,
+        "version": 24,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -418,15 +418,15 @@
           "omitted": false
         },
         {
-          "id": "palette",
-          "name": "Palette",
+          "id": "theme",
+          "name": "Theme",
           "type": "Link",
           "localized": false,
           "required": false,
           "validations": [
             {
               "linkContentType": [
-                "palette"
+                "theme"
               ]
             }
           ],
@@ -553,324 +553,6 @@
             "id": "clgjazsezfiu"
           }
         },
-        "id": "palette",
-        "type": "ContentType",
-        "createdAt": "2022-07-17T17:36:28.370Z",
-        "updatedAt": "2022-07-17T19:38:35.542Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 11,
-        "publishedAt": "2022-07-17T19:38:35.542Z",
-        "firstPublishedAt": "2022-07-17T17:36:32.988Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 6,
-        "version": 12,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        }
-      },
-      "displayField": "componentName",
-      "name": "Palette",
-      "description": "",
-      "fields": [
-        {
-          "id": "componentName",
-          "name": "Component Name",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "componentType",
-          "name": "Component Type",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-          ],
-          "defaultValue": {
-            "en-US": "Palette"
-          },
-          "disabled": true,
-          "omitted": false
-        },
-        {
-          "id": "colors",
-          "name": "Colors",
-          "type": "Array",
-          "localized": false,
-          "required": false,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false,
-          "items": {
-            "type": "Link",
-            "validations": [
-              {
-                "linkContentType": [
-                  "color"
-                ]
-              }
-            ],
-            "linkType": "Entry"
-          }
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "color",
-        "type": "ContentType",
-        "createdAt": "2022-07-17T17:42:48.745Z",
-        "updatedAt": "2022-07-17T19:37:09.930Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 13,
-        "publishedAt": "2022-07-17T19:37:09.930Z",
-        "firstPublishedAt": "2022-07-17T17:42:50.634Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 7,
-        "version": 14,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        }
-      },
-      "displayField": "componentName",
-      "name": "Color",
-      "description": "",
-      "fields": [
-        {
-          "id": "componentName",
-          "name": "Component Name",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "componentType",
-          "name": "Component Type",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "defaultValue": {
-            "en-US": "Color"
-          },
-          "disabled": true,
-          "omitted": false
-        },
-        {
-          "id": "colorCode",
-          "name": "Color Code",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "paletteRole",
-          "name": "Palette Role",
-          "type": "Link",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "linkContentType": [
-                "paletteRole"
-              ]
-            }
-          ],
-          "disabled": false,
-          "omitted": false,
-          "linkType": "Entry"
-        },
-        {
-          "id": "lightModeColor",
-          "name": "Light Mode Color",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "darkModeColor",
-          "name": "Dark Mode Color",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "paletteRole",
-        "type": "ContentType",
-        "createdAt": "2022-07-17T18:09:41.324Z",
-        "updatedAt": "2022-07-17T18:09:44.922Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2022-07-17T18:09:44.922Z",
-        "firstPublishedAt": "2022-07-17T18:09:44.922Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        }
-      },
-      "displayField": "name",
-      "name": "Palette Role",
-      "description": "",
-      "fields": [
-        {
-          "id": "name",
-          "name": "Name",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "code",
-          "name": "Code",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "unique": true
-            }
-          ],
-          "disabled": false,
-          "omitted": false
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
         "id": "daughter",
         "type": "ContentType",
         "createdAt": "2022-08-02T00:23:22.319Z",
@@ -927,6 +609,70 @@
         {
           "id": "fieldTwo",
           "name": "fieldTwo",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "theme",
+        "type": "ContentType",
+        "createdAt": "2022-08-13T07:49:53.086Z",
+        "updatedAt": "2022-08-13T07:49:53.428Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2022-08-13T07:49:53.428Z",
+        "firstPublishedAt": "2022-08-13T07:49:53.428Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7t25C6aD6qXNlbMaz8E3pG"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7t25C6aD6qXNlbMaz8E3pG"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7t25C6aD6qXNlbMaz8E3pG"
+          }
+        }
+      },
+      "displayField": "id",
+      "name": "Theme",
+      "description": "",
+      "fields": [
+        {
+          "id": "id",
+          "name": "id",
           "type": "Symbol",
           "localized": false,
           "required": false,
@@ -1159,7 +905,7 @@
             "linkType": "Space"
           }
         },
-        "version": 18,
+        "version": 24,
         "createdAt": "2022-06-21T01:59:44.406Z",
         "createdBy": {
           "sys": {
@@ -1168,7 +914,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2022-07-17T20:47:00.094Z",
+        "updatedAt": "2022-08-13T07:56:19.715Z",
         "updatedBy": {
           "sys": {
             "id": "7t25C6aD6qXNlbMaz8E3pG",
@@ -1203,7 +949,7 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "palette",
+          "fieldId": "theme",
           "widgetId": "entryLinkEditor",
           "widgetNamespace": "builtin"
         }
@@ -1281,208 +1027,6 @@
             "linkType": "Space"
           }
         },
-        "version": 12,
-        "createdAt": "2022-07-17T17:36:33.045Z",
-        "createdBy": {
-          "sys": {
-            "id": "7t25C6aD6qXNlbMaz8E3pG",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2022-07-17T19:38:37.349Z",
-        "updatedBy": {
-          "sys": {
-            "id": "7t25C6aD6qXNlbMaz8E3pG",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "palette",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "componentName",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "componentType",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "colors",
-          "settings": {
-            "bulkEditing": true,
-            "showLinkEntityAction": true,
-            "showCreateEntityAction": true
-          },
-          "widgetId": "entryLinksEditor",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "clgjazsezfiu",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
-        "version": 14,
-        "createdAt": "2022-07-17T17:42:50.718Z",
-        "createdBy": {
-          "sys": {
-            "id": "7t25C6aD6qXNlbMaz8E3pG",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2022-07-17T19:37:11.991Z",
-        "updatedBy": {
-          "sys": {
-            "id": "7t25C6aD6qXNlbMaz8E3pG",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "color",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "componentName",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "componentType",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "colorCode",
-          "widgetId": "slugEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "paletteRole",
-          "settings": {
-            "showLinkEntityAction": true,
-            "showCreateEntityAction": false
-          },
-          "widgetId": "entryLinkEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "lightModeColor",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "darkModeColor",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "clgjazsezfiu",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
-        "version": 2,
-        "createdAt": "2022-07-17T18:09:44.972Z",
-        "createdBy": {
-          "sys": {
-            "id": "7t25C6aD6qXNlbMaz8E3pG",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2022-07-17T18:09:48.053Z",
-        "updatedBy": {
-          "sys": {
-            "id": "7t25C6aD6qXNlbMaz8E3pG",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "paletteRole",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "name",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "code",
-          "widgetId": "slugEditor",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "clgjazsezfiu",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
         "version": 2,
         "createdAt": "2022-08-02T00:23:22.737Z",
         "createdBy": {
@@ -1523,6 +1067,57 @@
         },
         {
           "fieldId": "fieldTwo",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "clgjazsezfiu",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2022-08-13T07:49:53.484Z",
+        "createdBy": {
+          "sys": {
+            "id": "7t25C6aD6qXNlbMaz8E3pG",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-08-13T07:49:54.010Z",
+        "updatedBy": {
+          "sys": {
+            "id": "7t25C6aD6qXNlbMaz8E3pG",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "theme",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "id",
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         }
@@ -2042,7 +1637,7 @@
         "id": "5UawQ3PcrjSRBlI7qD61LB",
         "type": "Entry",
         "createdAt": "2022-06-21T02:00:11.257Z",
-        "updatedAt": "2022-07-17T19:45:16.698Z",
+        "updatedAt": "2022-08-13T07:56:53.798Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2050,8 +1645,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 7,
-        "publishedAt": "2022-07-17T19:45:16.698Z",
+        "publishedVersion": 9,
+        "publishedAt": "2022-08-13T07:56:53.798Z",
         "firstPublishedAt": "2022-06-21T02:00:31.380Z",
         "createdBy": {
           "sys": {
@@ -2067,8 +1662,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 3,
-        "version": 8,
+        "publishedCounter": 4,
+        "version": 10,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2091,12 +1686,12 @@
         "componentType": {
           "en-US": "PageTemplate"
         },
-        "palette": {
+        "theme": {
           "en-US": {
             "sys": {
               "type": "Link",
               "linkType": "Entry",
-              "id": "2BVurkWHzeKfilkcA1d4X5"
+              "id": "52vycZVoJxpBNUOPqtyh8m"
             }
           }
         }
@@ -2739,144 +2334,10 @@
             "id": "clgjazsezfiu"
           }
         },
-        "id": "HudhQqUc1DVAquTVdBJKF",
+        "id": "52vycZVoJxpBNUOPqtyh8m",
         "type": "Entry",
-        "createdAt": "2022-07-17T18:10:12.456Z",
-        "updatedAt": "2022-07-17T18:10:50.019Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 3,
-        "publishedAt": "2022-07-17T18:10:50.019Z",
-        "firstPublishedAt": "2022-07-17T18:10:50.019Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 4,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "paletteRole"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Primary"
-        },
-        "code": {
-          "en-US": "primary"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "9cfpcqSiyxUlTpKOLupYT",
-        "type": "Entry",
-        "createdAt": "2022-07-17T18:11:08.312Z",
-        "updatedAt": "2022-07-17T18:11:51.306Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 3,
-        "publishedAt": "2022-07-17T18:11:51.306Z",
-        "firstPublishedAt": "2022-07-17T18:11:51.306Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 4,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "paletteRole"
-          }
-        }
-      },
-      "fields": {
-        "name": {
-          "en-US": "Primary Background"
-        },
-        "code": {
-          "en-US": "primary-background"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "24eU2fCJ1YeXeER8EITEe5",
-        "type": "Entry",
-        "createdAt": "2022-07-17T18:13:41.704Z",
-        "updatedAt": "2022-07-17T18:13:52.158Z",
+        "createdAt": "2022-08-13T07:50:06.055Z",
+        "updatedAt": "2022-08-13T07:50:15.619Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2885,8 +2346,8 @@
           }
         },
         "publishedVersion": 2,
-        "publishedAt": "2022-07-17T18:13:52.158Z",
-        "firstPublishedAt": "2022-07-17T18:13:52.158Z",
+        "publishedAt": "2022-08-13T07:50:15.619Z",
+        "firstPublishedAt": "2022-08-13T07:50:15.619Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2914,16 +2375,13 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "paletteRole"
+            "id": "theme"
           }
         }
       },
       "fields": {
-        "name": {
-          "en-US": "Accent"
-        },
-        "code": {
-          "en-US": "accent"
+        "id": {
+          "en-US": "Default"
         }
       }
     },
@@ -2940,10 +2398,10 @@
             "id": "clgjazsezfiu"
           }
         },
-        "id": "5p2NXD44nNBCzKsFXnC9Rl",
+        "id": "1CazBwEh9jxkxsSHPpsqVy",
         "type": "Entry",
-        "createdAt": "2022-07-17T18:14:06.659Z",
-        "updatedAt": "2022-07-17T18:14:23.283Z",
+        "createdAt": "2022-08-13T07:50:29.139Z",
+        "updatedAt": "2022-08-13T07:50:34.832Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2951,9 +2409,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 3,
-        "publishedAt": "2022-07-17T18:14:23.283Z",
-        "firstPublishedAt": "2022-07-17T18:14:23.283Z",
+        "publishedVersion": 2,
+        "publishedAt": "2022-08-13T07:50:34.832Z",
+        "firstPublishedAt": "2022-08-13T07:50:34.832Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2969,7 +2427,7 @@
           }
         },
         "publishedCounter": 1,
-        "version": 4,
+        "version": 3,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2981,455 +2439,13 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "paletteRole"
+            "id": "theme"
           }
         }
       },
       "fields": {
-        "name": {
-          "en-US": "Accent Background"
-        },
-        "code": {
-          "en-US": "accent-background"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "x1Xxp65gRI0OlqVOcck6i",
-        "type": "Entry",
-        "createdAt": "2022-07-17T19:27:33.099Z",
-        "updatedAt": "2022-07-21T01:22:24.536Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 7,
-        "publishedAt": "2022-07-21T01:22:24.536Z",
-        "firstPublishedAt": "2022-07-17T19:28:29.919Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 2,
-        "version": 8,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "color"
-          }
-        }
-      },
-      "fields": {
-        "componentName": {
-          "en-US": "Monochrome Primary"
-        },
-        "componentType": {
-          "en-US": "Color"
-        },
-        "colorCode": {
-          "en-US": "monochrome-primary"
-        },
-        "paletteRole": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "HudhQqUc1DVAquTVdBJKF"
-            }
-          }
-        },
-        "lightModeColor": {
-          "en-US": "black"
-        },
-        "darkModeColor": {
-          "en-US": "white"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "24j1W00UEnmRBpJhbsTPWM",
-        "type": "Entry",
-        "createdAt": "2022-07-17T19:28:51.044Z",
-        "updatedAt": "2022-07-26T23:00:38.784Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 9,
-        "publishedAt": "2022-07-26T23:00:38.784Z",
-        "firstPublishedAt": "2022-07-17T19:30:12.342Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 3,
-        "version": 10,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "color"
-          }
-        }
-      },
-      "fields": {
-        "componentName": {
-          "en-US": "Monochrome Primary Background"
-        },
-        "componentType": {
-          "en-US": "Color"
-        },
-        "colorCode": {
-          "en-US": "monochrome-primary-background"
-        },
-        "paletteRole": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "9cfpcqSiyxUlTpKOLupYT"
-            }
-          }
-        },
-        "lightModeColor": {
-          "en-US": "white"
-        },
-        "darkModeColor": {
-          "en-US": "black"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "ika4IEZ1u2X6ZpZ1O2wHP",
-        "type": "Entry",
-        "createdAt": "2022-07-17T19:31:00.872Z",
-        "updatedAt": "2022-07-17T19:32:11.534Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 8,
-        "publishedAt": "2022-07-17T19:32:11.534Z",
-        "firstPublishedAt": "2022-07-17T19:32:11.534Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 9,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "color"
-          }
-        }
-      },
-      "fields": {
-        "componentName": {
-          "en-US": "Monochrome Accent"
-        },
-        "componentType": {
-          "en-US": "Color"
-        },
-        "colorCode": {
-          "en-US": "monochrome-accent"
-        },
-        "paletteRole": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "24eU2fCJ1YeXeER8EITEe5"
-            }
-          }
-        },
-        "lightModeColor": {
-          "en-US": "darkgray"
-        },
-        "darkModeColor": {
-          "en-US": "lightgray"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "17py17WnmfyEocODSN6mJk",
-        "type": "Entry",
-        "createdAt": "2022-07-17T19:33:58.530Z",
-        "updatedAt": "2022-07-17T19:34:47.695Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 5,
-        "publishedAt": "2022-07-17T19:34:47.695Z",
-        "firstPublishedAt": "2022-07-17T19:34:47.695Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 6,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "color"
-          }
-        }
-      },
-      "fields": {
-        "componentName": {
-          "en-US": "Monochrome Accent Background"
-        },
-        "componentType": {
-          "en-US": "Color"
-        },
-        "colorCode": {
-          "en-US": "monochrome-accent-background"
-        },
-        "paletteRole": {
-          "en-US": {
-            "sys": {
-              "type": "Link",
-              "linkType": "Entry",
-              "id": "5p2NXD44nNBCzKsFXnC9Rl"
-            }
-          }
-        },
-        "lightModeColor": {
-          "en-US": "lightgray"
-        },
-        "darkModeColor": {
-          "en-US": "darkgray"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "clgjazsezfiu"
-          }
-        },
-        "id": "2BVurkWHzeKfilkcA1d4X5",
-        "type": "Entry",
-        "createdAt": "2022-07-17T19:35:19.448Z",
-        "updatedAt": "2022-07-17T20:41:19.043Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 5,
-        "publishedAt": "2022-07-17T20:41:19.043Z",
-        "firstPublishedAt": "2022-07-17T19:39:40.594Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "publishedCounter": 2,
-        "version": 6,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7t25C6aD6qXNlbMaz8E3pG"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "palette"
-          }
-        }
-      },
-      "fields": {
-        "componentName": {
-          "en-US": "Monochrome"
-        },
-        "componentType": {
-          "en-US": "Palette"
-        },
-        "colors": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "x1Xxp65gRI0OlqVOcck6i"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "24j1W00UEnmRBpJhbsTPWM"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "ika4IEZ1u2X6ZpZ1O2wHP"
-              }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "17py17WnmfyEocODSN6mJk"
-              }
-            }
-          ]
+        "id": {
+          "en-US": "Dark"
         }
       }
     }

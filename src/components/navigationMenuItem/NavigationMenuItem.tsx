@@ -9,7 +9,6 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 import { NavigationMenuItemProps } from '@/generated/types';
-import { getTypeId } from '@/helpers/getTypeId';
 
 import { getComponentProps } from '../component/getComponentProps';
 
@@ -33,13 +32,12 @@ const NavigationMenuItem: FC<
         >
           <NavigationMenuSub>
             <NavigationMenuList className={`[&>*]:border-2`}>
-              {content_navigationMenuItems.map((item) => {
-                const { type, id } = getTypeId(item);
+              {content_navigationMenuItems.map(({ type, id }) => {
                 const props = getComponentProps<NavigationMenuItemProps>({
                   type,
                   id,
                 });
-                console.log({ content_navigationMenuItems, props });
+
                 return props ? (
                   <NavigationMenuItem key={id} {...props} level={level + 1} />
                 ) : null;

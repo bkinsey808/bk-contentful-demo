@@ -1,27 +1,31 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-import { getTypeId } from '@/helpers/getTypeId';
-
 import contentfulState from '../../src/generated/contentfulState.json';
+import { getTypeId } from '../helpers/getTypeId';
 import componentPaths from './componentPaths.json';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getFormattedValue = (value: any) => {
-  console.log(value);
   if (typeof value === 'string') {
     return `'${value}'`;
   }
-  return `[${value
-    .map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (item: any) => {
+
+  if (Array.isArray(value)) {
+    return `[${value
+      .map(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const { type, id } = getTypeId(item);
-        return `\n    { type: '${type}', id: '${id}' },`;
-      }
-    )
-    .join('')}\n  ]`;
+        (item: any) => {
+          const { type, id } = getTypeId(item);
+          return `\n    { type: '${type}', id: '${id}' },`;
+        }
+      )
+      .join('')}\n  ]`;
+  }
+
+  const { type, id } = getTypeId(value);
+
+  return `{ type: '${type}', id: '${id}' }`;
 };
 
 const main = async () => {
@@ -59,15 +63,13 @@ ${itemIds
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (contentfulState as any).content[type].items[itemId]
     );
-    return `export const ${itemComponentName} = ${type}Template.bind({});
-${itemComponentName}.args = {
-${itemEntries
-  .map(([field, value]) => `  content_${field}: ${getFormattedValue(value)},`)
-  .join('\n')}
-};`;
+    return `export const ${itemComponentName} = ${type}Template.bind({});\n${itemComponentName}.args = {${itemEntries
+      .map(
+        ([field, value]) => `\n  content_${field}: ${getFormattedValue(value)},`
+      )
+      .join('')}\n};`;
   })
-  .join('\n\n')}
-`
+  .join('\n\n')}\n`
     );
   }
 };

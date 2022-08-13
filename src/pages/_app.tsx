@@ -2,7 +2,6 @@
 import { AppProps } from 'next/app';
 import { useEffect } from 'react';
 
-import { AppContextProvider } from '@/helpers/app.context';
 import { isClient } from '@/helpers/isClient';
 import { maybeSetDarkModeClass } from '@/helpers/maybeSetDarkModeClass';
 import { setCssCustomProperties } from '@/theme/utils';
@@ -27,9 +26,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     };
   }, []);
 
-  return (
-    <AppContextProvider>
-      <Component {...pageProps} />
-    </AppContextProvider>
-  );
+  return <Component {...pageProps} />;
 }

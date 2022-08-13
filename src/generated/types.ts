@@ -4,10 +4,8 @@ export type ComponentType =
   | 'NavigationMenuItem'
   | 'PageTemplate'
   | 'NavigationMenu'
-  | 'Palette'
-  | 'Color'
-  | 'PaletteRole'
-  | 'Daughter';
+  | 'Daughter'
+  | 'Theme';
 
 export interface Component {
   type: ComponentType;
@@ -46,7 +44,7 @@ export interface PageTemplateProps extends Component {
   type: 'PageTemplate';
   content_componentName: string;
   content_componentType: string;
-  content_palette: ComponentReference;
+  content_theme: ComponentReference;
 }
 
 export interface NavigationMenuProps extends Component {
@@ -56,31 +54,13 @@ export interface NavigationMenuProps extends Component {
   content_navigationMenuItems: ComponentReference[];
 }
 
-export interface PaletteProps extends Component {
-  type: 'Palette';
-  content_componentName: string;
-  content_componentType: string;
-  content_colors: ComponentReference[];
-}
-
-export interface ColorProps extends Component {
-  type: 'Color';
-  content_componentName: string;
-  content_componentType: string;
-  content_colorCode: string;
-  content_paletteRole: ComponentReference;
-  content_lightModeColor: string;
-  content_darkModeColor: string;
-}
-
-export interface PaletteRoleProps extends Component {
-  type: 'PaletteRole';
-  content_name: string;
-  content_code: string;
-}
-
 export interface DaughterProps extends Component {
   type: 'Daughter';
   content_fieldOne: string;
   content_fieldTwo: string;
+}
+
+export interface ThemeProps extends Component {
+  type: 'Theme';
+  content_id: string;
 };
