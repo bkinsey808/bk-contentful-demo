@@ -1,13 +1,17 @@
 import { FC } from 'react';
 
-import { PageTemplateProps } from '@/generated/types';
+import { PageTemplateProps, ThemeProps } from '@/generated/types';
+
+import { getComponentProps } from '../component/getComponentProps';
 
 const PageTemplate: FC<
   PageTemplateProps & {
     children: JSX.Element;
   }
 > = ({ content_theme, children }) => {
-  const themeClass = `theme--${content_theme}`;
+  const content_id = (getComponentProps(content_theme) as ThemeProps)
+    ?.content_id;
+  const themeClass = `theme--${content_id}`;
 
   return (
     <div

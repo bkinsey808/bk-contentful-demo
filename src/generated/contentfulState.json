@@ -52,9 +52,9 @@
   },
   "content": {
     "Page": {
-      "idField": "title",
+      "idField": "slug",
       "items": {
-        "Home Page": {
+        "home": {
           "title": "Home Page",
           "slug": "home",
           "pageTemplateComponent": {
@@ -81,7 +81,7 @@
             }
           ]
         },
-        "About Page": {
+        "about": {
           "title": "About Page",
           "slug": "about",
           "pageTemplateComponent": {
@@ -292,7 +292,7 @@
   "componentReferences": {
     "2f8cdZV7QruSYf1oNepjVV": {
       "type": "Page",
-      "id": "Home Page"
+      "id": "home"
     },
     "6rsoQEJaAzv5ET2M0KcCcG": {
       "type": "Banner",
@@ -300,7 +300,7 @@
     },
     "MZY0olu76qMrl0cGc8T3D": {
       "type": "Page",
-      "id": "About Page"
+      "id": "about"
     },
     "6Fa2TsYp9FAu4240A58jBD": {
       "type": "Banner",

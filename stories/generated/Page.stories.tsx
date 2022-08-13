@@ -13,27 +13,23 @@ const PageTemplate: Story<PageProps> = (args) => {
   return <Page {...args} />;
 };
 
-export const HomePage = PageTemplate.bind({});
-HomePage.args = {
+export const home = PageTemplate.bind({});
+home.args = {
   content_title: 'Home Page',
   content_slug: 'home',
-  content_pageTemplateComponent: {
-    type: 'PageTemplate',
-    id: 'Default Page Template',
-  },
+  content_pageTemplateComponent: { type: 'PageTemplate', id: 'Default Page Template' },
   content_content: [
     { type: 'Banner', id: 'Home Banner' },
     { type: 'NavigationMenu', id: 'Header Menu' },
   ],
 };
 
-export const AboutPage = PageTemplate.bind({});
-AboutPage.args = {
+export const about = PageTemplate.bind({});
+about.args = {
   content_title: 'About Page',
   content_slug: 'about',
-  content_pageTemplateComponent: {
-    type: 'PageTemplate',
-    id: 'Default Page Template',
-  },
-  content_content: [{ type: 'Banner', id: 'About Banner' }],
+  content_pageTemplateComponent: { type: 'PageTemplate', id: 'Default Page Template' },
+  content_content: [
+    { type: 'Banner', id: 'About Banner' },
+  ],
 };

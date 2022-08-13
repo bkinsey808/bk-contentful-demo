@@ -12,7 +12,7 @@
         "id": "page",
         "type": "ContentType",
         "createdAt": "2022-06-05T18:48:32.720Z",
-        "updatedAt": "2022-07-17T19:51:13.298Z",
+        "updatedAt": "2022-08-13T09:59:59.419Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 29,
-        "publishedAt": "2022-07-17T19:51:13.298Z",
+        "publishedVersion": 31,
+        "publishedAt": "2022-08-13T09:59:59.419Z",
         "firstPublishedAt": "2022-06-05T18:48:33.050Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 15,
-        "version": 30,
+        "publishedCounter": 16,
+        "version": 32,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -47,7 +47,7 @@
           }
         }
       },
-      "displayField": "title",
+      "displayField": "slug",
       "name": "Page",
       "description": "",
       "fields": [
@@ -698,7 +698,7 @@
             "linkType": "Space"
           }
         },
-        "version": 30,
+        "version": 32,
         "createdAt": "2022-06-05T18:48:33.098Z",
         "createdBy": {
           "sys": {
@@ -707,7 +707,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2022-07-17T19:51:15.969Z",
+        "updatedAt": "2022-08-13T10:00:00.026Z",
         "updatedBy": {
           "sys": {
             "id": "7t25C6aD6qXNlbMaz8E3pG",
