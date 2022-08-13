@@ -1,0 +1,4 @@
+{
+  "Banner": "src/components/banner/Banner",
+  "NavigationMenu": "src/components/navigationMenu/NavigationMenu"
+}

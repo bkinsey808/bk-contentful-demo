@@ -1,0 +1,518 @@
+{
+  "componentTypes": {
+    "Page": {
+      "fields": {
+        "title": "string",
+        "slug": "string",
+        "pageTemplateComponent": "Link",
+        "content": "Array"
+      }
+    },
+    "Banner": {
+      "fields": {
+        "componentName": "string",
+        "componentType": "string",
+        "height": "string"
+      }
+    },
+    "NavigationMenuItem": {
+      "fields": {
+        "componentName": "string",
+        "componentType": "string",
+        "label": "string",
+        "url": "string",
+        "navigationMenuItems": "Array"
+      }
+    },
+    "PageTemplate": {
+      "fields": {
+        "componentName": "string",
+        "componentType": "string",
+        "palette": "Link"
+      }
+    },
+    "NavigationMenu": {
+      "fields": {
+        "componentName": "string",
+        "componentType": "string",
+        "navigationMenuItems": "Array"
+      }
+    },
+    "Palette": {
+      "fields": {
+        "componentName": "string",
+        "componentType": "string",
+        "colors": "Array"
+      }
+    },
+    "Color": {
+      "fields": {
+        "componentName": "string",
+        "componentType": "string",
+        "colorCode": "string",
+        "paletteRole": "Link",
+        "lightModeColor": "string",
+        "darkModeColor": "string"
+      }
+    },
+    "PaletteRole": {
+      "fields": {
+        "name": "string",
+        "code": "string"
+      }
+    },
+    "Daughter": {
+      "fields": {
+        "fieldOne": "string",
+        "fieldTwo": "string"
+      }
+    }
+  },
+  "content": {
+    "Page": {
+      "idField": "title",
+      "items": {
+        "Home Page": {
+          "title": "Home Page",
+          "slug": "home",
+          "pageTemplateComponent": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5UawQ3PcrjSRBlI7qD61LB"
+            }
+          },
+          "content": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6rsoQEJaAzv5ET2M0KcCcG"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1K2V9aHadSotUKQOQMTpPv"
+              }
+            }
+          ]
+        },
+        "About Page": {
+          "title": "About Page",
+          "slug": "about",
+          "pageTemplateComponent": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5UawQ3PcrjSRBlI7qD61LB"
+            }
+          },
+          "content": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6Fa2TsYp9FAu4240A58jBD"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Banner": {
+      "idField": "componentName",
+      "items": {
+        "Home Banner": {
+          "componentName": "Home Banner",
+          "componentType": "Banner",
+          "height": "250px"
+        },
+        "About Banner": {
+          "componentName": "About Banner",
+          "componentType": "Banner",
+          "height": "2000px"
+        }
+      }
+    },
+    "NavigationMenuItem": {
+      "idField": "componentName",
+      "items": {
+        "Home Navigation Menu Item": {
+          "componentName": "Home Navigation Menu Item",
+          "componentType": "NavigationMenuItem",
+          "label": "Home",
+          "url": "/home",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "71LDKz93xWxCjh4K5nza4v"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4Vu0r5UHdYUSVaaTEtYtxI"
+              }
+            }
+          ]
+        },
+        "About Navigation Menu Item": {
+          "componentName": "About Navigation Menu Item",
+          "componentType": "NavigationMenuItem",
+          "label": "About",
+          "url": "/about",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1rIez3pyxASN4vxzx7MmM3"
+              }
+            }
+          ]
+        },
+        "Home Option 1": {
+          "componentName": "Home Option 1",
+          "componentType": "NavigationMenuItem",
+          "label": "Home Option 1",
+          "url": "/home/option1",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "48yDdnnz7U67NBJyQh27Bw"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "Ye9hUbsMYDwzMDXLajVfH"
+              }
+            }
+          ]
+        },
+        "Home Option 2": {
+          "componentName": "Home Option 2",
+          "componentType": "NavigationMenuItem",
+          "label": "Home Option 2",
+          "url": "/home/option2",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1Cb3i1fZXrivBx6JnGxWye"
+              }
+            }
+          ]
+        },
+        "Home Option 1a": {
+          "componentName": "Home Option 1a",
+          "componentType": "NavigationMenuItem",
+          "label": "Home Option 1a",
+          "url": "/home/option1a"
+        },
+        "Home Option 1b": {
+          "componentName": "Home Option 1b",
+          "componentType": "NavigationMenuItem",
+          "label": "Home Option 1b",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6axhVMf0zPaX7kxjvMX4P"
+              }
+            }
+          ]
+        },
+        "Home Option 1ba": {
+          "componentName": "Home Option 1ba",
+          "componentType": "NavigationMenuItem",
+          "label": "Home Option 1ba"
+        },
+        "Home Option 2a": {
+          "componentName": "Home Option 2a",
+          "componentType": "NavigationMenuItem",
+          "label": "Home Option 2a"
+        },
+        "About Option 1": {
+          "componentName": "About Option 1",
+          "componentType": "NavigationMenuItem",
+          "label": "About Option 1"
+        }
+      }
+    },
+    "PageTemplate": {
+      "idField": "componentName",
+      "items": {
+        "Default Page Template": {
+          "componentName": "Default Page Template",
+          "componentType": "PageTemplate",
+          "palette": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2BVurkWHzeKfilkcA1d4X5"
+            }
+          }
+        }
+      }
+    },
+    "NavigationMenu": {
+      "idField": "componentName",
+      "items": {
+        "Header Menu": {
+          "componentName": "Header Menu",
+          "componentType": "NavigationMenu",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1LXOWOwtJxJJworKAMa7Sm"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7GyTnS2OAAjsXn1aKILvzE"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Palette": {
+      "idField": "componentName",
+      "items": {
+        "Monochrome": {
+          "componentName": "Monochrome",
+          "componentType": "Palette",
+          "colors": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "x1Xxp65gRI0OlqVOcck6i"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "24j1W00UEnmRBpJhbsTPWM"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "ika4IEZ1u2X6ZpZ1O2wHP"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "17py17WnmfyEocODSN6mJk"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Color": {
+      "idField": "componentName",
+      "items": {
+        "Monochrome Primary": {
+          "componentName": "Monochrome Primary",
+          "componentType": "Color",
+          "colorCode": "monochrome-primary",
+          "paletteRole": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "HudhQqUc1DVAquTVdBJKF"
+            }
+          },
+          "lightModeColor": "black",
+          "darkModeColor": "white"
+        },
+        "Monochrome Primary Background": {
+          "componentName": "Monochrome Primary Background",
+          "componentType": "Color",
+          "colorCode": "monochrome-primary-background",
+          "paletteRole": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "9cfpcqSiyxUlTpKOLupYT"
+            }
+          },
+          "lightModeColor": "white",
+          "darkModeColor": "black"
+        },
+        "Monochrome Accent": {
+          "componentName": "Monochrome Accent",
+          "componentType": "Color",
+          "colorCode": "monochrome-accent",
+          "paletteRole": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "24eU2fCJ1YeXeER8EITEe5"
+            }
+          },
+          "lightModeColor": "darkgray",
+          "darkModeColor": "lightgray"
+        },
+        "Monochrome Accent Background": {
+          "componentName": "Monochrome Accent Background",
+          "componentType": "Color",
+          "colorCode": "monochrome-accent-background",
+          "paletteRole": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5p2NXD44nNBCzKsFXnC9Rl"
+            }
+          },
+          "lightModeColor": "lightgray",
+          "darkModeColor": "darkgray"
+        }
+      }
+    },
+    "PaletteRole": {
+      "idField": "name",
+      "items": {
+        "Primary": {
+          "name": "Primary",
+          "code": "primary"
+        },
+        "Primary Background": {
+          "name": "Primary Background",
+          "code": "primary-background"
+        },
+        "Accent": {
+          "name": "Accent",
+          "code": "accent"
+        },
+        "Accent Background": {
+          "name": "Accent Background",
+          "code": "accent-background"
+        }
+      }
+    },
+    "Daughter": {
+      "idField": "fieldTwo",
+      "items": {}
+    }
+  },
+  "componentReferences": {
+    "2f8cdZV7QruSYf1oNepjVV": {
+      "type": "Page",
+      "id": "Home Page"
+    },
+    "6rsoQEJaAzv5ET2M0KcCcG": {
+      "type": "Banner",
+      "id": "Home Banner"
+    },
+    "MZY0olu76qMrl0cGc8T3D": {
+      "type": "Page",
+      "id": "About Page"
+    },
+    "6Fa2TsYp9FAu4240A58jBD": {
+      "type": "Banner",
+      "id": "About Banner"
+    },
+    "1LXOWOwtJxJJworKAMa7Sm": {
+      "type": "NavigationMenuItem",
+      "id": "Home Navigation Menu Item"
+    },
+    "7GyTnS2OAAjsXn1aKILvzE": {
+      "type": "NavigationMenuItem",
+      "id": "About Navigation Menu Item"
+    },
+    "5UawQ3PcrjSRBlI7qD61LB": {
+      "type": "PageTemplate",
+      "id": "Default Page Template"
+    },
+    "71LDKz93xWxCjh4K5nza4v": {
+      "type": "NavigationMenuItem",
+      "id": "Home Option 1"
+    },
+    "4Vu0r5UHdYUSVaaTEtYtxI": {
+      "type": "NavigationMenuItem",
+      "id": "Home Option 2"
+    },
+    "48yDdnnz7U67NBJyQh27Bw": {
+      "type": "NavigationMenuItem",
+      "id": "Home Option 1a"
+    },
+    "Ye9hUbsMYDwzMDXLajVfH": {
+      "type": "NavigationMenuItem",
+      "id": "Home Option 1b"
+    },
+    "6axhVMf0zPaX7kxjvMX4P": {
+      "type": "NavigationMenuItem",
+      "id": "Home Option 1ba"
+    },
+    "1Cb3i1fZXrivBx6JnGxWye": {
+      "type": "NavigationMenuItem",
+      "id": "Home Option 2a"
+    },
+    "1rIez3pyxASN4vxzx7MmM3": {
+      "type": "NavigationMenuItem",
+      "id": "About Option 1"
+    },
+    "1K2V9aHadSotUKQOQMTpPv": {
+      "type": "NavigationMenu",
+      "id": "Header Menu"
+    },
+    "HudhQqUc1DVAquTVdBJKF": {
+      "type": "PaletteRole",
+      "id": "Primary"
+    },
+    "9cfpcqSiyxUlTpKOLupYT": {
+      "type": "PaletteRole",
+      "id": "Primary Background"
+    },
+    "24eU2fCJ1YeXeER8EITEe5": {
+      "type": "PaletteRole",
+      "id": "Accent"
+    },
+    "5p2NXD44nNBCzKsFXnC9Rl": {
+      "type": "PaletteRole",
+      "id": "Accent Background"
+    },
+    "x1Xxp65gRI0OlqVOcck6i": {
+      "type": "Color",
+      "id": "Monochrome Primary"
+    },
+    "24j1W00UEnmRBpJhbsTPWM": {
+      "type": "Color",
+      "id": "Monochrome Primary Background"
+    },
+    "ika4IEZ1u2X6ZpZ1O2wHP": {
+      "type": "Color",
+      "id": "Monochrome Accent"
+    },
+    "17py17WnmfyEocODSN6mJk": {
+      "type": "Color",
+      "id": "Monochrome Accent Background"
+    },
+    "2BVurkWHzeKfilkcA1d4X5": {
+      "type": "Palette",
+      "id": "Monochrome"
+    }
+  }
+}

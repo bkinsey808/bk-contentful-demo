@@ -1,28 +1,34 @@
-import { FC } from 'react';
+import dynamic from 'next/dynamic';
+import { FC, Suspense } from 'react';
 
-import { AppContextState } from '@/helpers/app.context';
+import { ComponentReference, BannerProps } from '@/generated/types';
 
-import Banner from '../banner/Banner';
-import NavigationMenu from '../navigationMenu/NavigationMenu';
+import { getComponentProps } from './getComponentProps';
 
-const Component: FC<{
-  name?: string | null;
-  type?: string | null;
-  state?: AppContextState;
-}> = ({ name, type, state }) => {
-  if (!name || !type) {
+// const Page = dynamic(() => import('../page/Page'), {
+//   suspense: true,
+// });
+const Banner = dynamic(() => import('../banner/Banner'), {
+  suspense: true,
+});
+
+const getComponent = ({ id, type }: ComponentReference) => {
+  const props = getComponentProps({ id, type });
+  if (!props) {
     return null;
   }
 
   // eslint-disable-next-line sonarjs/no-small-switch
   switch (type) {
+    // case 'Page':
+    //   return <Page {...getProps<PageProps>({ id, type })} />;
     case 'Banner':
-      return <Banner componentName={name} state={state} />;
-    case 'NavigationMenu':
-      return <NavigationMenu componentName={name} state={state} />;
-    // note that NavigationMenuItem doesn't have to be listed here since it will never be called via this file since it only exists under a NavigationMenu
+      return <Banner {...(props as BannerProps)} />;
   }
-  return null;
 };
 
-export default Component;
+export const Component: FC<ComponentReference> = ({ id, type }) => {
+  return (
+    <Suspense fallback={`Loading...`}>{getComponent({ type, id })}</Suspense>
+  );
+};

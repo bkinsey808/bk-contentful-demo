@@ -8,34 +8,24 @@ import {
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { NavigationMenuItem as NavigationMenuItemType } from '@/generated/graphql';
-import { AppContextState } from '@/helpers/app.context';
-import { useComponent } from '@/hooks/useComponent';
+import { NavigationMenuItemProps } from '@/generated/types';
+import { getTypeId } from '@/helpers/getTypeId';
 
-const NavigationMenuItem: FC<{
-  componentName: string;
-  state?: AppContextState;
-  level: number;
-}> = ({ componentName, state, level }) => {
-  const navigationMenuItem = useComponent<NavigationMenuItemType>(
-    'NavigationMenuItem',
-    componentName,
-    state
-  );
+import { getComponentProps } from '../component/getComponentProps';
 
-  const subMenuItems = navigationMenuItem?.navigationMenuItemsCollection?.items;
-
+const NavigationMenuItem: FC<
+  NavigationMenuItemProps & {
+    level: number;
+  }
+> = ({ content_label, content_url, content_navigationMenuItems, level }) => {
   return (
-    <NavigationMenuItemRadix
-      key={navigationMenuItem?.componentName}
-      className={`relative bg-gray-300`}
-    >
+    <NavigationMenuItemRadix className={`relative bg-gray-300`}>
       <NavigationMenuTrigger>
-        <Link href={navigationMenuItem?.url ?? '#'}>
-          <a className={`whitespace-nowrap`}>{navigationMenuItem?.label}</a>
+        <Link href={content_url ?? '#'}>
+          <a className={`whitespace-nowrap`}>{content_label}</a>
         </Link>
       </NavigationMenuTrigger>
-      {subMenuItems?.length ? (
+      {content_navigationMenuItems?.length ? (
         <NavigationMenuContent
           className={`absolute z-10
             ${level < 2 ? 'top-[100%]' : 'top-0 left-[100%]'} 
@@ -43,16 +33,17 @@ const NavigationMenuItem: FC<{
         >
           <NavigationMenuSub>
             <NavigationMenuList className={`[&>*]:border-2`}>
-              {subMenuItems.map((subMenuItem) => (
-                <NavigationMenuItem
-                  key={subMenuItem?.componentName}
-                  componentName={
-                    subMenuItem?.componentName ?? 'NavigationMenuItem'
-                  }
-                  state={state}
-                  level={level + 1}
-                />
-              ))}
+              {content_navigationMenuItems.map((item) => {
+                const { type, id } = getTypeId(item);
+                const props = getComponentProps<NavigationMenuItemProps>({
+                  type,
+                  id,
+                });
+                console.log({ content_navigationMenuItems, props });
+                return props ? (
+                  <NavigationMenuItem key={id} {...props} level={level + 1} />
+                ) : null;
+              })}
             </NavigationMenuList>
           </NavigationMenuSub>
         </NavigationMenuContent>

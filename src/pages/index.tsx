@@ -1,7 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
-import Page from '@/components/page/Page';
+import { Component } from '@/components/component/Component';
+// import Page from '@/components/page/Page';
 import { appContextDefaultState, AppContextState } from '@/helpers/app.context';
 import { recursivelySetState } from '@/helpers/recursivelySetState';
 import { sdk } from '@/helpers/sdk';
@@ -17,7 +18,8 @@ const Home: NextPage<{ state: AppContextState }> = ({ state }) => {
       <Head>
         <title>Contentful Demo</title>
       </Head>
-      <Page slug={DEFAULT_SLUG} state={state} />
+      <Component id={'Home Banner'} type={'Banner'} />
+      {/* <Page slug={DEFAULT_SLUG} state={state} /> */}
     </>
   );
 };

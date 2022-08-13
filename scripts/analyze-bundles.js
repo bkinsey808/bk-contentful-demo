@@ -20,9 +20,8 @@ function formatBytes(bytes, signed = false) {
 
   const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(k));
 
-  return `${sign}${parseFloat(Math.abs(bytes / Math.pow(k, i)).toFixed(dm))}${
-    sizes[i]
-  }`;
+  return `${sign}${parseFloat(Math.abs(bytes / Math.pow(k, i)).toFixed(dm))}${sizes[i]
+    }`;
 }
 
 const pageSizes = Object.keys(bundle.pages).map((p) => {
