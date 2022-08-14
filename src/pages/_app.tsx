@@ -4,12 +4,10 @@ import { useEffect } from 'react';
 
 import { isClient } from '@/helpers/isClient';
 import { maybeSetDarkModeClass } from '@/helpers/maybeSetDarkModeClass';
-import { setCssCustomProperties } from '@/theme/utils';
 
 import '../styles/globals.css';
 
 if (isClient()) {
-  setCssCustomProperties();
   maybeSetDarkModeClass();
 }
 

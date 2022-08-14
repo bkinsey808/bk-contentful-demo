@@ -9,7 +9,7 @@ import { getThemeClass } from '@/helpers/getThemeClass';
 
 import { Component } from '../component/Component';
 import { getComponentProps } from '../component/getComponentProps';
-import PageTemplate from '../pageTemplate/PageTemplate';
+import PageTemplate from './PageTemplate';
 
 const getContentComponents = (content_content: ComponentReference[]) =>
   content_content.map(({ id, type }) => (

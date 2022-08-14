@@ -11,7 +11,7 @@ import {
 import { getThemeClass } from '@/helpers/getThemeClass';
 
 import { getComponentProps } from '../component/getComponentProps';
-import NavigationMenuItem from '../navigationMenuItem/NavigationMenuItem';
+import NavigationMenuItem from './NavigationMenuItem';
 
 const NavigationMenu: FC<NavigationMenuProps> = ({
   content_navigationMenuItems,

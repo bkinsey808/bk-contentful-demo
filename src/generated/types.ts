@@ -46,8 +46,8 @@ export interface NavigationMenuItemProps extends Component {
 export interface PageTemplateProps extends Component {
   type: 'PageTemplate';
   content_componentName: string;
-  content_componentType: string;
   content_theme: ComponentReference;
+  content_darkModeTheme: ComponentReference;
 }
 
 export interface NavigationMenuProps extends Component {

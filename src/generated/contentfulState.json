@@ -27,8 +27,8 @@
     "PageTemplate": {
       "fields": {
         "componentName": "string",
-        "componentType": "string",
-        "theme": "Link"
+        "theme": "Link",
+        "darkModeTheme": "Link"
       }
     },
     "NavigationMenu": {
@@ -237,12 +237,18 @@
       "items": {
         "Default Page Template": {
           "componentName": "Default Page Template",
-          "componentType": "PageTemplate",
           "theme": {
             "sys": {
               "type": "Link",
               "linkType": "Entry",
               "id": "52vycZVoJxpBNUOPqtyh8m"
+            }
+          },
+          "darkModeTheme": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "1CazBwEh9jxkxsSHPpsqVy"
             }
           }
         }
@@ -283,8 +289,8 @@
         "Default": {
           "id": "Default"
         },
-        "Dark": {
-          "id": "Dark"
+        "DarkMonochrome": {
+          "id": "DarkMonochrome"
         }
       }
     }
@@ -356,7 +362,7 @@
     },
     "1CazBwEh9jxkxsSHPpsqVy": {
       "type": "Theme",
-      "id": "Dark"
+      "id": "DarkMonochrome"
     }
   }
 }

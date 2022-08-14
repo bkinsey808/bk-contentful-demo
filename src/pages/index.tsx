@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Contentful Demo</title>
       </Head>
-      <Component id={'Home Page'} type={'Page'} />
+      <Component id={'home'} type={'Page'} />
     </>
   );
 };

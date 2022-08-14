@@ -350,7 +350,7 @@
         "id": "pageTemplate",
         "type": "ContentType",
         "createdAt": "2022-06-21T01:59:44.015Z",
-        "updatedAt": "2022-08-13T07:56:19.170Z",
+        "updatedAt": "2022-08-14T03:52:18.494Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -358,8 +358,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 23,
-        "publishedAt": "2022-08-13T07:56:19.170Z",
+        "publishedVersion": 29,
+        "publishedAt": "2022-08-14T03:52:18.494Z",
         "firstPublishedAt": "2022-06-21T01:59:44.351Z",
         "createdBy": {
           "sys": {
@@ -375,8 +375,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 12,
-        "version": 24,
+        "publishedCounter": 15,
+        "version": 30,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -404,22 +404,25 @@
           "omitted": false
         },
         {
-          "id": "componentType",
-          "name": "Component Type",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "defaultValue": {
-            "en-US": "PageTemplate"
-          },
-          "disabled": true,
-          "omitted": false
-        },
-        {
           "id": "theme",
           "name": "Theme",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "theme"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "darkModeTheme",
+          "name": "Dark Mode Theme",
           "type": "Link",
           "localized": false,
           "required": false,
@@ -905,7 +908,7 @@
             "linkType": "Space"
           }
         },
-        "version": 24,
+        "version": 30,
         "createdAt": "2022-06-21T01:59:44.406Z",
         "createdBy": {
           "sys": {
@@ -914,7 +917,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2022-08-13T07:56:19.715Z",
+        "updatedAt": "2022-08-14T03:52:19.161Z",
         "updatedBy": {
           "sys": {
             "id": "7t25C6aD6qXNlbMaz8E3pG",
@@ -944,12 +947,12 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "componentType",
-          "widgetId": "singleLine",
+          "fieldId": "theme",
+          "widgetId": "entryLinkEditor",
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "theme",
+          "fieldId": "darkModeTheme",
           "widgetId": "entryLinkEditor",
           "widgetNamespace": "builtin"
         }
@@ -1637,7 +1640,7 @@
         "id": "5UawQ3PcrjSRBlI7qD61LB",
         "type": "Entry",
         "createdAt": "2022-06-21T02:00:11.257Z",
-        "updatedAt": "2022-08-13T07:56:53.798Z",
+        "updatedAt": "2022-08-14T03:52:55.564Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1645,8 +1648,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 9,
-        "publishedAt": "2022-08-13T07:56:53.798Z",
+        "publishedVersion": 11,
+        "publishedAt": "2022-08-14T03:52:55.564Z",
         "firstPublishedAt": "2022-06-21T02:00:31.380Z",
         "createdBy": {
           "sys": {
@@ -1662,8 +1665,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 4,
-        "version": 10,
+        "publishedCounter": 5,
+        "version": 12,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1683,15 +1686,21 @@
         "componentName": {
           "en-US": "Default Page Template"
         },
-        "componentType": {
-          "en-US": "PageTemplate"
-        },
         "theme": {
           "en-US": {
             "sys": {
               "type": "Link",
               "linkType": "Entry",
               "id": "52vycZVoJxpBNUOPqtyh8m"
+            }
+          }
+        },
+        "darkModeTheme": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "1CazBwEh9jxkxsSHPpsqVy"
             }
           }
         }
@@ -2401,7 +2410,7 @@
         "id": "1CazBwEh9jxkxsSHPpsqVy",
         "type": "Entry",
         "createdAt": "2022-08-13T07:50:29.139Z",
-        "updatedAt": "2022-08-13T07:50:34.832Z",
+        "updatedAt": "2022-08-14T08:07:06.358Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2409,8 +2418,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 2,
-        "publishedAt": "2022-08-13T07:50:34.832Z",
+        "publishedVersion": 4,
+        "publishedAt": "2022-08-14T08:07:06.358Z",
         "firstPublishedAt": "2022-08-13T07:50:34.832Z",
         "createdBy": {
           "sys": {
@@ -2426,8 +2435,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 1,
-        "version": 3,
+        "publishedCounter": 2,
+        "version": 5,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2445,7 +2454,7 @@
       },
       "fields": {
         "id": {
-          "en-US": "Dark"
+          "en-US": "DarkMonochrome"
         }
       }
     }
