@@ -1,34 +1,13 @@
 # Contentful Demo
 
-This project demonstrates a possible approach combining NextJs, Contentful, and Storybook. The solution achieves SSG (static site generation) with the served site, and Component-Level fetching with Storybook. This means Contentful content authors can see what their content looks like on Storybook, although with a delay as the data ("content") is fetched from contentful. (I haven't figured out how to mimic the SSG experience with storybook yet, but it might be possible).
+This project demonstrates a possible approach combining NextJs, Contentful, and Storybook.
 
-With this solution, both designers and content authors can use the same Storybook for their design system, bringing together and significantly empowering potentially non-coding users. NextJs becomes a relatively thin layer primarily responsible for implementing each component with code.
+## TODO
 
-The solution involves defining components on the Contentful level by requiring two additional fields per content model:
-
-- component type
-- component name (e.g. id/slug/unique instance identifier)
-
-Currently, sub-components can be defined on one or more multiple entry reference fields. (Code does not currently support a single sub-component reference field, but it should be possible if some convention were established.) There is no naming convention needed for the Contentful multiple entry reference field(s) name(s).
-
-These contentful components may nest child components and those child components may nest child components to an arbitrary depth component tree.
-
-## How It Works
-
-On the contentful side, a component type is implemented as a Content Model, and an instance of a component is implemented as an Entry. Not all models need to be component types. Component models must have at least two fields:
-
-1. componentName (unique instance identifier)
-2. componentType (default value set to the component type in camel case, and made hidden and readonly so content authors don't have to think about it)
-
-On the client side, each Contentful-driven component is implemented in with three files:
-
-1. The [ComponentType].graphql file. If the component has sub-components, only the componentType and componentName of those need to be fetched. I recommend starting with this file first, and then running `yarn codegen` to get the generated types set up for the next file.
-2. The functional react component itself: [ComponentType].tsx . Each Contentful-driven component must take at least two props: the componentName, and the state. These are passed to the useComponent hook to automatically fetch the component content if necessary. The state prop is only necessary to support SSG, since SSG pages cannot rely on runtime JavaScript.
-3. The [ComponentType].stories.tsx file (optional). Currently, each contentful instance of the component must be manually added to have a story for it, although maybe codegen could automate this in the future. It would be awesome if a contentful author could add a new instance of a component and it would show up in Storybook automatically. Maybe it could be possible with a webhook and codegen. Also, in the future it'd be 🔥 if we could pre-generate the content (similar to SSR) instead of requiring a runtime fetch.
-
-The magic that makes SSG work for the site is that on the page level we recursively fetch the component tree content directly from Contentful. (We don't need to worry about rendering the react site to determine what fetches are necessary like in some other component-level fetching solutions that batch on the page-level). In practice, the build seems plenty fast, but of course it will slow down as the number of component instances increase, especially with very deeply nested trees of components.
-
-In the future it may be necessary to monitor Contentful responses in case the queries are rate limited. I've found that components need to be relatively simple and few in number for any given parent component in order to not trigger Contentful's rate limiting on the free community tier. If Contentful's rate limiting is triggered, code could be written to limit the results per query and run multiple limited queries instead of a single unlimited one.
+- accent colors
+- tokens set in tailwind config
+- contentful images
+- form builder
 
 ## Deployment
 
