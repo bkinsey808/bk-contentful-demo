@@ -7,6 +7,13 @@ import { NavigationMenuProps } from '../../src/generated/types';
 export default {
   component: NavigationMenu,
   title: 'Components/NavigationMenu',
+  argTypes: {
+    theme: {
+      options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
+      control: { type: 'select' },
+    },
+  },
+
 } as Meta<NavigationMenuProps>;
 
 const NavigationMenuTemplate: Story<NavigationMenuProps> = (args) => {

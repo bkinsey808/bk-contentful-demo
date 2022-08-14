@@ -15,9 +15,9 @@ const filterDesignTokens = (prefix) =>
         ...obj,
         [key]: USE_CSS_CUSTOM_PROPERTIES
           ? // easier to debug and trace with css variables
-          `var(--${key})`
+            `var(--${key})`
           : // can see color square in code editor
-          DESIGN_TOKENS[key],
+            DESIGN_TOKENS[key],
       }),
       {}
     );

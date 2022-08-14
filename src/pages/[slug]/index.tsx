@@ -8,7 +8,6 @@ import { PageProps } from '@/generated/types';
 const DEFAULT_SLUG = process.env.NEXT_PUBLIC_DEFAULT_SLUG || 'home';
 
 const SlugPage: NextPage<{ slug: string }> = ({ slug }) => {
-  console.log({ slug });
   return (
     <>
       <Head>

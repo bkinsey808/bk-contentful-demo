@@ -1,7 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 
+import tokens from '../../figma/tokens.json';
 import contentfulState from '../../src/generated/contentfulState.json';
+import { getTokenStyles } from '../helpers/getTokenStyles';
 import { getTypeId } from '../helpers/getTypeId';
 import componentPaths from './componentPaths.json';
 
@@ -50,6 +52,15 @@ import { ${type}Props } from '../../src/generated/types';
 export default {
   component: ${type},
   title: 'Components/${type}',
+  argTypes: {
+    theme: {
+      options: [${Object.keys(tokens)
+        .map((token) => `'${token}'`)
+        .join(', ')}],
+      control: { type: 'select' },
+    },
+  },
+
 } as Meta<${type}Props>;
 
 const ${type}Template: Story<${type}Props> = (args) => {
@@ -72,6 +83,12 @@ ${itemIds
   .join('\n\n')}\n`
     );
   }
+
+  const styles = getTokenStyles();
+  await fs.writeFile(
+    path.join(__dirname, '../../src/generated/storybookStyles.css'),
+    styles
+  );
 };
 
 main();

@@ -1,6 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { FC } from 'react';
 
+import { getTokenStyles } from '@/helpers/getTokenStyles';
+
 const Body: FC = () => {
   return (
     <body>
@@ -13,7 +15,10 @@ const Body: FC = () => {
 const Document: FC = () => {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        {/* done inline instead of an external stylesheet as a perf optimization. no flash! */}
+        <style>{getTokenStyles()}</style>
+      </Head>
       <Body />
     </Html>
   );

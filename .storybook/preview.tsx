@@ -1,17 +1,16 @@
 import * as NextImage from 'next/image';
 
+import '../src/generated/storybookStyles.css';
 import '../src/styles/globals.css';
-import { setCssCustomProperties } from '../src/theme/utils';
 
 export const decorators = [
   (Story) => {
-    // set css custom properties for every story
-    setCssCustomProperties();
     return <Story />;
   },
 ];
 
 export const parameters = {
+  layout: 'fullscreen',
   // @see https://storybook.js.org/docs/react/essentials/actions
   actions: { argTypesRegex: '^on[A-Z].*' },
   // @see https://storybook.js.org/docs/react/essentials/controls#custom-control-type-matchers

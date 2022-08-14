@@ -1,4 +1,6 @@
-export type ComponentType = 
+export type Theme = 'Global' | 'Monochrome' | 'BlueTint' | 'DarkMonochrome';
+
+  export type ComponentType = 
   | 'Page'
   | 'Banner'
   | 'NavigationMenuItem'
@@ -9,6 +11,7 @@ export type ComponentType =
 
 export interface Component {
   type: ComponentType;
+  theme?: Theme;
 }
 
 export interface ComponentReference  {

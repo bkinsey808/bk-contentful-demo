@@ -7,6 +7,13 @@ import { PageProps } from '../../src/generated/types';
 export default {
   component: Page,
   title: 'Components/Page',
+  argTypes: {
+    theme: {
+      options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
+      control: { type: 'select' },
+    },
+  },
+
 } as Meta<PageProps>;
 
 const PageTemplate: Story<PageProps> = (args) => {

@@ -13,17 +13,7 @@ const PageTemplate: FC<
     ?.content_id;
   const themeClass = `theme--${content_id}`;
 
-  return (
-    <div
-      className={`${themeClass} h-[100vh] w-[100vw]`}
-      style={{
-        color: 'var(--primary)',
-        backgroundColor: 'var(--primary-background)',
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div className={`${themeClass} h-[100vh] w-[100vw]`}>{children}</div>;
 };
 
 export default PageTemplate;

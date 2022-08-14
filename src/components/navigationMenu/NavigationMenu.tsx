@@ -8,15 +8,17 @@ import {
   NavigationMenuItemProps,
   NavigationMenuProps,
 } from '@/generated/types';
+import { getThemeClass } from '@/helpers/getThemeClass';
 
 import { getComponentProps } from '../component/getComponentProps';
 import NavigationMenuItem from '../navigationMenuItem/NavigationMenuItem';
 
 const NavigationMenu: FC<NavigationMenuProps> = ({
   content_navigationMenuItems,
+  theme,
 }) => {
   return (
-    <NavigationMenuRadix>
+    <NavigationMenuRadix className={getThemeClass(theme)}>
       <NavigationMenuList
         className={`flex [&>*]:border-2 [&>*]:border-red-300 [&>*]:p-2`}
       >

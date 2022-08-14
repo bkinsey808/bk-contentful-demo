@@ -1,6 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 
+import tokens from '../../figma/tokens.json';
+import contentfulState from '../../src/generated/contentfulState.json';
+
 const getFieldValueType = (fieldType: string) => {
   switch (fieldType) {
     case 'Link':
@@ -12,23 +15,17 @@ const getFieldValueType = (fieldType: string) => {
 };
 
 const main = async () => {
-  const contentfulFileName = path.join(
-    __dirname,
-    '../../src/generated/contentfulState.json'
-  );
-
-  const data = await fs.readFile(contentfulFileName);
-  const contentfulState = JSON.parse(data.toString());
-
   const componentTypes = Object.keys(contentfulState.componentTypes);
-  console.log(componentTypes);
 
-  const types = `export type ComponentType = ${componentTypes
+  const types = `export type Theme = '${Object.keys(tokens).join("' | '")}';
+
+  export type ComponentType = ${componentTypes
     .map((type: string) => `\n  | '${type}'`)
     .join('')};
 
 export interface Component {
   type: ComponentType;
+  theme?: Theme;
 }
 
 export interface ComponentReference  {
@@ -38,7 +35,8 @@ export interface ComponentReference  {
 
 ${componentTypes
   .map((type: string) => {
-    const fields = contentfulState.componentTypes[type].fields;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const fields = (contentfulState as any).componentTypes[type].fields;
     const fieldNames = Object.keys(fields);
 
     if (!fieldNames) {

@@ -1,0 +1,24 @@
+
+:root {
+  --token--default-size: 50px;
+  --token--another-size: 10px;
+  color: var(--token--primary);
+  background-color: var(--token--primary-background);}
+
+.theme--Monochrome {
+  --token--primary: #000;
+  --token--primary-background: #fff;
+  color: var(--token--primary);
+  background-color: var(--token--primary-background);}
+
+.theme--BlueTint {
+  --token--primary: #0883a5;
+  --token--primary-background: #ddf4f4;
+  color: var(--token--primary);
+  background-color: var(--token--primary-background);}
+
+.theme--DarkMonochrome {
+  --token--primary: #FFF;
+  --token--primary-background: #000;
+  color: var(--token--primary);
+  background-color: var(--token--primary-background);}

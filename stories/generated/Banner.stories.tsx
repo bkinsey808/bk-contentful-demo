@@ -7,6 +7,13 @@ import { BannerProps } from '../../src/generated/types';
 export default {
   component: Banner,
   title: 'Components/Banner',
+  argTypes: {
+    theme: {
+      options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
+      control: { type: 'select' },
+    },
+  },
+
 } as Meta<BannerProps>;
 
 const BannerTemplate: Story<BannerProps> = (args) => {

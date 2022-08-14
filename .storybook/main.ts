@@ -21,7 +21,7 @@ module.exports = {
     builder: 'webpack5',
   },
   typescript: { reactDocgen: false },
-  webpackFinal: (config: any) => {
+  webpackFinal: (config) => {
     /**
      * Add support for alias-imports
      * @see https://github.com/storybookjs/storybook/issues/11989#issuecomment-715524391

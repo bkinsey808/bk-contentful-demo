@@ -2,7 +2,8 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const ContentSecurityPolicy = `
   default-src 'self' graphql.contentful.com;
-  script-src 'self'${process.env.NODE_ENV === 'production' ? '' : " 'unsafe-eval'"
+  script-src 'self'${
+    process.env.NODE_ENV === 'production' ? '' : " 'unsafe-eval'"
   };
   child-src example.com;
   style-src 'self' 'unsafe-inline';

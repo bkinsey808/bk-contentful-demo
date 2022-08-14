@@ -6,6 +6,7 @@ import {
   BannerProps,
   PageProps,
   NavigationMenuProps,
+  Theme,
 } from '@/generated/types';
 
 import Banner from '../banner/Banner';
@@ -29,9 +30,16 @@ import { getComponentProps } from './getComponentProps';
 //   }
 // );
 
-const getComponent = ({ id, type }: ComponentReference) => {
-  const props = getComponentProps({ id, type });
-  console.log({ props });
+const getComponent = ({
+  id,
+  type,
+  theme,
+}: ComponentReference & { theme?: Theme }) => {
+  const props = {
+    ...(getComponentProps({ id, type }) as Record<string, unknown>),
+    theme,
+  };
+
   if (!props) {
     return null;
   }
@@ -46,9 +54,13 @@ const getComponent = ({ id, type }: ComponentReference) => {
   }
 };
 
-export const Component: FC<ComponentReference> = ({ id, type }) => {
+export const Component: FC<ComponentReference & { theme?: Theme }> = ({
+  id,
+  type,
+  theme,
+}) => {
   return (
-    // <Suspense fallback={`Loading...`}>{getComponent({ type, id })}</Suspense>
-    <>{getComponent({ type, id })}</>
+    // <Suspense fallback={`Loading...`}>{getComponent({ type, id, theme })}</Suspense>
+    <>{getComponent({ type, id, theme })}</>
   );
 };
