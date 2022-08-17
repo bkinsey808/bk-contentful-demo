@@ -16,9 +16,26 @@ const getThemeProperties = (theme: string) => {
       const value = (tokens as Tokens)[theme][token].value;
       return `  --token--${token}: ${value};\n`;
     })
-    .join(
-      ''
-    )}  color: var(--token--primary);\n  background-color: var(--token--primary-background);\n`;
+    .join('')}  color: var(--token--primary);
+  background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);\n`;
+};
+
+const getThemeRules = (theme: string, dark?: boolean) => {
+  const themeSelector = `${dark ? '.dark ' : ''}${
+    theme === 'Global' ? '' : `.theme--${theme} `
+  }`;
+  return `${themeSelector}:focus-visible { outline-color: var(--token--accent); }
+${themeSelector}::selection { background-color: var(--token--accent); }
+${themeSelector}::marker { color: var(--token--accent); }
+${themeSelector}:is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
+}\n`;
 };
 
 export const getTokenStyles = () => {
@@ -26,16 +43,17 @@ export const getTokenStyles = () => {
 
   return `${themes
     .map((theme) => {
-      return `\n${
+      return `${
         theme === 'Global' ? ':root' : `.theme--${theme}`
-      } {\n${getThemeProperties(theme)}}\n`;
+      } {\n${getThemeProperties(theme)}}\n\n${getThemeRules(theme)}\n`;
+    })
+    .join('')}${themes
+    .filter((theme) => theme !== 'Global')
+    .map((theme) => {
+      return `.dark .theme-dark--${theme} {\n${getThemeProperties(
+        theme
+      )}}\n\n${getThemeRules(theme, true)}\n`;
     })
     .join('')}
-${themes
-  .filter((theme) => theme !== 'Global')
-  .map((theme) => {
-    return `.dark .theme-dark--${theme} {\n${getThemeProperties(theme)}}\n\n`;
-  })
-  .join('')}
   `;
 };

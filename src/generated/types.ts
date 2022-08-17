@@ -7,7 +7,8 @@ export type Theme = 'Global' | 'Monochrome' | 'BlueTint' | 'DarkMonochrome';
   | 'PageTemplate'
   | 'NavigationMenu'
   | 'Daughter'
-  | 'Theme';
+  | 'Theme'
+  | 'Custom';
 
 export interface Component {
   type: ComponentType;
@@ -66,4 +67,9 @@ export interface DaughterProps extends Component {
 export interface ThemeProps extends Component {
   type: 'Theme';
   content_id: string;
+}
+
+export interface CustomProps extends Component {
+  type: 'Custom';
+  content_name: string;
 };

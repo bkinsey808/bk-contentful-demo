@@ -6,6 +6,9 @@ This project demonstrates a possible approach combining NextJs, Contentful, and 
 
 - accent colors
 - tokens set in tailwind config
+- token control in storybook (not just theme)
+- theme and dark mode toggle
+- webhook to trigger deploy
 - contentful images
 - form builder
 

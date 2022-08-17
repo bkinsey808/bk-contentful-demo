@@ -7,9 +7,11 @@ import {
   PageProps,
   NavigationMenuProps,
   Theme,
+  CustomProps,
 } from '@/generated/types';
 
 import Banner from '../banner/Banner';
+import Custom from '../custom/Custom';
 import NavigationMenu from '../navigationMenu/NavigationMenu';
 import Page from '../page/Page';
 import { getComponentProps } from './getComponentProps';
@@ -51,6 +53,8 @@ const getComponent = ({
       return <Banner {...(props as BannerProps)} />;
     case 'NavigationMenu':
       return <NavigationMenu {...(props as NavigationMenuProps)} />;
+    case 'Custom':
+      return <Custom {...(props as CustomProps)} />;
   }
 };
 

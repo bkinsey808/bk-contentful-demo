@@ -1,51 +1,147 @@
-
 :root {
   --token--default-size: 50px;
   --token--another-size: 10px;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+:focus-visible { outline-color: var(--token--accent); }
+::selection { background-color: var(--token--accent); }
+::marker { color: var(--token--accent); }
+:is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 .theme--Monochrome {
   --token--primary: #000;
   --token--primary-background: #fff;
+  --token--accent: #D9D9D9;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+.theme--Monochrome :focus-visible { outline-color: var(--token--accent); }
+.theme--Monochrome ::selection { background-color: var(--token--accent); }
+.theme--Monochrome ::marker { color: var(--token--accent); }
+.theme--Monochrome :is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 .theme--BlueTint {
   --token--primary: #0883a5;
   --token--primary-background: #ddf4f4;
+  --token--accent: #0d99ff;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+.theme--BlueTint :focus-visible { outline-color: var(--token--accent); }
+.theme--BlueTint ::selection { background-color: var(--token--accent); }
+.theme--BlueTint ::marker { color: var(--token--accent); }
+.theme--BlueTint :is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 .theme--DarkMonochrome {
   --token--primary: #FFF;
   --token--primary-background: #000;
+  --token--accent: #a9a9a9;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+.theme--DarkMonochrome :focus-visible { outline-color: var(--token--accent); }
+.theme--DarkMonochrome ::selection { background-color: var(--token--accent); }
+.theme--DarkMonochrome ::marker { color: var(--token--accent); }
+.theme--DarkMonochrome :is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 .dark .theme-dark--Monochrome {
   --token--primary: #000;
   --token--primary-background: #fff;
+  --token--accent: #D9D9D9;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+.dark .theme--Monochrome :focus-visible { outline-color: var(--token--accent); }
+.dark .theme--Monochrome ::selection { background-color: var(--token--accent); }
+.dark .theme--Monochrome ::marker { color: var(--token--accent); }
+.dark .theme--Monochrome :is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 .dark .theme-dark--BlueTint {
   --token--primary: #0883a5;
   --token--primary-background: #ddf4f4;
+  --token--accent: #0d99ff;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+.dark .theme--BlueTint :focus-visible { outline-color: var(--token--accent); }
+.dark .theme--BlueTint ::selection { background-color: var(--token--accent); }
+.dark .theme--BlueTint ::marker { color: var(--token--accent); }
+.dark .theme--BlueTint :is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 .dark .theme-dark--DarkMonochrome {
   --token--primary: #FFF;
   --token--primary-background: #000;
+  --token--accent: #a9a9a9;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
+  accent-color: var(--token--accent);
+}
+
+.dark .theme--DarkMonochrome :focus-visible { outline-color: var(--token--accent); }
+.dark .theme--DarkMonochrome ::selection { background-color: var(--token--accent); }
+.dark .theme--DarkMonochrome ::marker { color: var(--token--accent); }
+.dark .theme--DarkMonochrome :is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button, 
+  ::-webkit-outer-spin-button
+) {
+  color: var(--token--accent);
 }
 
 

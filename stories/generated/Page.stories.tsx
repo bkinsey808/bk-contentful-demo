@@ -38,5 +38,6 @@ about.args = {
   content_pageTemplateComponent: { type: 'PageTemplate', id: 'Default Page Template' },
   content_content: [
     { type: 'Banner', id: 'About Banner' },
+    { type: 'Custom', id: 'Accent Color Display' },
   ],
 };

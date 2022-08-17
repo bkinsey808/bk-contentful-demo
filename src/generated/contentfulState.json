@@ -48,6 +48,11 @@
       "fields": {
         "id": "string"
       }
+    },
+    "Custom": {
+      "fields": {
+        "name": "string"
+      }
     }
   },
   "content": {
@@ -97,6 +102,13 @@
                 "type": "Link",
                 "linkType": "Entry",
                 "id": "6Fa2TsYp9FAu4240A58jBD"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "44WJweIjTEonsmMVg0dISG"
               }
             }
           ]
@@ -293,6 +305,14 @@
           "id": "DarkMonochrome"
         }
       }
+    },
+    "Custom": {
+      "idField": "name",
+      "items": {
+        "Accent Color Display": {
+          "name": "Accent Color Display"
+        }
+      }
     }
   },
   "componentReferences": {
@@ -363,6 +383,10 @@
     "1CazBwEh9jxkxsSHPpsqVy": {
       "type": "Theme",
       "id": "DarkMonochrome"
+    },
+    "44WJweIjTEonsmMVg0dISG": {
+      "type": "Custom",
+      "id": "Accent Color Display"
     }
   }
 }

@@ -50,8 +50,7 @@ ${componentTypes
       const fieldValue = fields[fieldName];
       return `content_${fieldName}: ${getFieldValueType(fieldValue)};`;
     })
-    .join('\n  ')}
-}`;
+    .join('\n  ')}\n}`;
   })
   .join('\n\n')};
 `;
