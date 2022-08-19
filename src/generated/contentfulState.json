@@ -253,7 +253,7 @@
             "sys": {
               "type": "Link",
               "linkType": "Entry",
-              "id": "52vycZVoJxpBNUOPqtyh8m"
+              "id": "2cBJMhlyIL703dXvUCf18s"
             }
           },
           "darkModeTheme": {
@@ -303,6 +303,9 @@
         },
         "DarkMonochrome": {
           "id": "DarkMonochrome"
+        },
+        "BlueTint": {
+          "id": "BlueTint"
         }
       }
     },
@@ -387,6 +390,10 @@
     "44WJweIjTEonsmMVg0dISG": {
       "type": "Custom",
       "id": "Accent Color Display"
+    },
+    "2cBJMhlyIL703dXvUCf18s": {
+      "type": "Theme",
+      "id": "BlueTint"
     }
   }
 }

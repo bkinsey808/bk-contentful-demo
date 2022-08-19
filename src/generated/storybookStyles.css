@@ -1,6 +1,8 @@
 :root {
   --token--default-size: 50px;
   --token--another-size: 10px;
+  --token--accent: blue;
+  --token--accent-background: lightgray;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -17,11 +19,23 @@
 ) {
   color: var(--token--accent);
 }
+ progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+ progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+ progress {
+  background-color: var(--token--accent-background, lightgray);
+}
 
 .theme--Monochrome {
   --token--primary: #000;
   --token--primary-background: #fff;
-  --token--accent: #D9D9D9;
+  --token--accent: #555555;
+  --token--accent-background: #D9D9D9;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -38,11 +52,23 @@
 ) {
   color: var(--token--accent);
 }
+.theme--Monochrome  progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+.theme--Monochrome  progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+.theme--Monochrome  progress {
+  background-color: var(--token--accent-background, lightgray);
+}
 
 .theme--BlueTint {
   --token--primary: #0883a5;
   --token--primary-background: #ddf4f4;
   --token--accent: #0d99ff;
+  --token--accent-background: #f0f8ff;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -59,11 +85,23 @@
 ) {
   color: var(--token--accent);
 }
+.theme--BlueTint  progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+.theme--BlueTint  progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+.theme--BlueTint  progress {
+  background-color: var(--token--accent-background, lightgray);
+}
 
 .theme--DarkMonochrome {
   --token--primary: #FFF;
   --token--primary-background: #000;
-  --token--accent: #a9a9a9;
+  --token--accent: #BBBBBB;
+  --token--accent-background: #555555;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -80,11 +118,23 @@
 ) {
   color: var(--token--accent);
 }
+.theme--DarkMonochrome  progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+.theme--DarkMonochrome  progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+.theme--DarkMonochrome  progress {
+  background-color: var(--token--accent-background, lightgray);
+}
 
 .dark .theme-dark--Monochrome {
   --token--primary: #000;
   --token--primary-background: #fff;
-  --token--accent: #D9D9D9;
+  --token--accent: #555555;
+  --token--accent-background: #D9D9D9;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -101,11 +151,23 @@
 ) {
   color: var(--token--accent);
 }
+.dark .theme--Monochrome  progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+.dark .theme--Monochrome  progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+.dark .theme--Monochrome  progress {
+  background-color: var(--token--accent-background, lightgray);
+}
 
 .dark .theme-dark--BlueTint {
   --token--primary: #0883a5;
   --token--primary-background: #ddf4f4;
   --token--accent: #0d99ff;
+  --token--accent-background: #f0f8ff;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -122,11 +184,23 @@
 ) {
   color: var(--token--accent);
 }
+.dark .theme--BlueTint  progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+.dark .theme--BlueTint  progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+.dark .theme--BlueTint  progress {
+  background-color: var(--token--accent-background, lightgray);
+}
 
 .dark .theme-dark--DarkMonochrome {
   --token--primary: #FFF;
   --token--primary-background: #000;
-  --token--accent: #a9a9a9;
+  --token--accent: #BBBBBB;
+  --token--accent-background: #555555;
   color: var(--token--primary);
   background-color: var(--token--primary-background);
   accent-color: var(--token--accent);
@@ -142,6 +216,17 @@
   ::-webkit-outer-spin-button
 ) {
   color: var(--token--accent);
+}
+.dark .theme--DarkMonochrome  progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+.dark .theme--DarkMonochrome  progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, lightgray);
+}
+/* for firefox */
+.dark .theme--DarkMonochrome  progress {
+  background-color: var(--token--accent-background, lightgray);
 }
 
 

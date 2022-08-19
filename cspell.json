@@ -1,6 +1,8 @@
 {
   "version": "0.2",
-  "ignorePaths": ["src/generated/**"],
+  "ignorePaths": [
+    "src/generated/**"
+  ],
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
@@ -20,6 +22,7 @@
     "headlessui",
     "heroicons",
     "kodingdotninja",
+    "lightgray",
     "Masae",
     "mdbootstrap",
     "mkdir",

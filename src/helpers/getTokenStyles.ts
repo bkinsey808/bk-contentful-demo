@@ -1,5 +1,8 @@
 import tokens from '../../figma/tokens.json';
 
+const DEFAULT_ACCENT = 'blue';
+const DEFAULT_ACCENT_BACKGROUND = 'lightgray';
+
 interface Tokens {
   [key: string]: {
     [key: string]: {
@@ -8,12 +11,30 @@ interface Tokens {
   };
 }
 
+const getThemeTokenValues = (theme: string) => {
+  const themeTokenValues = (tokens as Tokens)[theme];
+
+  // set default values for accent tokens
+  if (!themeTokenValues.accent) {
+    themeTokenValues.accent = { value: DEFAULT_ACCENT };
+  }
+  if (!themeTokenValues['accent-background']) {
+    themeTokenValues['accent-background'] = {
+      value: DEFAULT_ACCENT_BACKGROUND,
+    };
+  }
+
+  return themeTokenValues;
+};
+
+/** could be customized per theme */
 const getThemeProperties = (theme: string) => {
-  const themeTokens = Object.keys((tokens as Tokens)[theme]);
+  const themeTokenValues = getThemeTokenValues(theme);
+  const themeTokens = Object.keys(themeTokenValues);
 
   return `${themeTokens
     .map((token: string) => {
-      const value = (tokens as Tokens)[theme][token].value;
+      const value = themeTokenValues[token].value;
       return `  --token--${token}: ${value};\n`;
     })
     .join('')}  color: var(--token--primary);
@@ -21,6 +42,7 @@ const getThemeProperties = (theme: string) => {
   accent-color: var(--token--accent);\n`;
 };
 
+/** could be customized per theme */
 const getThemeRules = (theme: string, dark?: boolean) => {
   const themeSelector = `${dark ? '.dark ' : ''}${
     theme === 'Global' ? '' : `.theme--${theme} `
@@ -35,6 +57,17 @@ ${themeSelector}:is(
   ::-webkit-outer-spin-button
 ) {
   color: var(--token--accent);
+}
+${themeSelector} progress::-webkit-progress-value {
+  background-color: var(--token--accent);
+}
+/* for chrome */
+${themeSelector} progress::-webkit-progress-bar {
+    background-color: var(--token--accent-background, ${DEFAULT_ACCENT_BACKGROUND});
+}
+/* for firefox */
+${themeSelector} progress {
+  background-color: var(--token--accent-background, ${DEFAULT_ACCENT_BACKGROUND});
 }\n`;
 };
 
