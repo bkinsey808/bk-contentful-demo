@@ -6,6 +6,7 @@ import {
   PageTemplateProps,
 } from '@/generated/types';
 import { getThemeClass } from '@/helpers/getThemeClass';
+import { getTokenStyle } from '@/helpers/getTokenStyle';
 
 import { Component } from '../component/Component';
 import { getComponentProps } from '../component/getComponentProps';
@@ -21,6 +22,10 @@ const Page: FC<PageProps> = ({
   content_pageTemplateComponent,
   content_content,
   theme,
+  type: _type,
+  children: _children,
+  content_slug: _content_slug,
+  ...tokens
 }) => {
   const { id, type } = content_pageTemplateComponent;
   const props = getComponentProps<PageTemplateProps>({
@@ -34,7 +39,10 @@ const Page: FC<PageProps> = ({
 
   return (
     <PageTemplate {...props}>
-      <div className={`${getThemeClass(theme)} h-[100vh] w-[100vw]`}>
+      <div
+        className={`${getThemeClass(theme)} h-[100vh] w-[100vw]`}
+        style={getTokenStyle(tokens)}
+      >
         <span className="font-bold">{content_title}</span>
         this is the page
         {getContentComponents(content_content)}

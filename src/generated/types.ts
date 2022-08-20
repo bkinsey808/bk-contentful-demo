@@ -1,5 +1,7 @@
 export type Theme = 'Global' | 'Monochrome' | 'BlueTint' | 'DarkMonochrome';
 
+  export type Token = '--token--default-size' | '--token--another-size' | '--token--primary' | '--token--primary-background' | '--token--accent' | '--token--accent-background';
+
   export type ComponentType = 
   | 'Page'
   | 'Banner'
@@ -10,9 +12,11 @@ export type Theme = 'Global' | 'Monochrome' | 'BlueTint' | 'DarkMonochrome';
   | 'Theme'
   | 'Custom';
 
-export interface Component {
+export type Component = {
   type: ComponentType;
   theme?: Theme;
+} & {
+  [key in Token]?: string;
 }
 
 export interface ComponentReference  {

@@ -9,6 +9,7 @@ import {
   NavigationMenuProps,
 } from '@/generated/types';
 import { getThemeClass } from '@/helpers/getThemeClass';
+import { getTokenStyle } from '@/helpers/getTokenStyle';
 
 import { getComponentProps } from '../component/getComponentProps';
 import NavigationMenuItem from './NavigationMenuItem';
@@ -16,9 +17,17 @@ import NavigationMenuItem from './NavigationMenuItem';
 const NavigationMenu: FC<NavigationMenuProps> = ({
   content_navigationMenuItems,
   theme,
+  content_componentName: _content_componentName,
+  content_componentType: _content_componentType,
+  type: _type,
+  children: _children,
+  ...tokens
 }) => {
   return (
-    <NavigationMenuRadix className={getThemeClass(theme)}>
+    <NavigationMenuRadix
+      className={getThemeClass(theme)}
+      style={getTokenStyle(tokens)}
+    >
       <NavigationMenuList
         className={`flex [&>*]:border-2 [&>*]:border-red-300 [&>*]:p-2`}
       >

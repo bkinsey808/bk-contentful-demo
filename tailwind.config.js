@@ -26,6 +26,13 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        // TODO: generate these from the set of all color tokens from all themes
+        ['primary']: 'var(--token--primary)',
+        ['primary-background']: 'var(--token--primary-background)',
+        ['accent']: 'var(--token--accent)',
+        ['accent-background']: 'var(--token--accent-background)',
+      },
       // colors: filterDesignTokens('color'),
       // spacing: filterDesignTokens('spacing'),
     },

@@ -42,7 +42,10 @@
   },
   "dependencies": {
     "@kodingdotninja/use-tailwind-breakpoint": "^0.0.5",
+    "@radix-ui/react-checkbox": "^1.0.0",
+    "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-navigation-menu": "^0.1.2",
+    "@radix-ui/react-progress": "^1.0.0",
     "clsx": "^1.1.1",
     "cntl": "^1.0.0",
     "next": "^12.2.4",

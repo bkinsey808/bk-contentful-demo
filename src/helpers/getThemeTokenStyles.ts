@@ -57,21 +57,10 @@ ${themeSelector}:is(
   ::-webkit-outer-spin-button
 ) {
   color: var(--token--accent);
-}
-${themeSelector} progress::-webkit-progress-value {
-  background-color: var(--token--accent);
-}
-/* for chrome */
-${themeSelector} progress::-webkit-progress-bar {
-    background-color: var(--token--accent-background, ${DEFAULT_ACCENT_BACKGROUND});
-}
-/* for firefox */
-${themeSelector} progress {
-  background-color: var(--token--accent-background, ${DEFAULT_ACCENT_BACKGROUND});
 }\n`;
 };
 
-export const getTokenStyles = () => {
+export const getThemeTokenStyles = () => {
   const themes = Object.keys(tokens);
 
   return `${themes

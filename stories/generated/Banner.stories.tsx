@@ -12,8 +12,11 @@ export default {
       options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
       control: { type: 'select' },
     },
+    '--token--primary': { control: 'color' },
+    '--token--primary-background': { control: 'color' },
+    '--token--accent': { control: 'color' },
+    '--token--accent-background': { control: 'color' },
   },
-
 } as Meta<BannerProps>;
 
 const BannerTemplate: Story<BannerProps> = (args) => {
