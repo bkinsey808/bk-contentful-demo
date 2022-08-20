@@ -3,6 +3,7 @@ import path from 'path';
 
 import tokens from '../../figma/tokens.json';
 import contentfulState from '../../src/generated/contentfulState.json';
+import { getTokenNames } from '../../src/helpers/getTokenNames';
 
 const getFieldValueType = (fieldType: string) => {
   switch (fieldType) {
@@ -13,19 +14,24 @@ const getFieldValueType = (fieldType: string) => {
   }
   return 'string';
 };
-
 const main = async () => {
   const componentTypes = Object.keys(contentfulState.componentTypes);
+  const themeNames = Object.keys(tokens);
+  const tokenNames = getTokenNames();
 
-  const types = `export type Theme = '${Object.keys(tokens).join("' | '")}';
+  const types = `export type Theme = '${themeNames.join("' | '")}';
+
+  export type Token = '${tokenNames.join("' | '")}';
 
   export type ComponentType = ${componentTypes
     .map((type: string) => `\n  | '${type}'`)
     .join('')};
 
-export interface Component {
+export type Component = {
   type: ComponentType;
   theme?: Theme;
+} & {
+  [key in Token]?: string;
 }
 
 export interface ComponentReference  {

@@ -13,9 +13,3 @@
     scrollbar-gutter: stable;
   }
 }
-
-@supports (accent-color: #fff) {
-  .notice {
-    display: none;
-  }
-}

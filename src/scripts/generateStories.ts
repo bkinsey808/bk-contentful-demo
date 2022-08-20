@@ -3,9 +3,12 @@ import path from 'path';
 
 import tokens from '../../figma/tokens.json';
 import contentfulState from '../../src/generated/contentfulState.json';
-import { getTokenStyles } from '../helpers/getTokenStyles';
+import { getTokenNames } from '../../src/helpers/getTokenNames';
+import { getThemeTokenStyles } from '../helpers/getThemeTokenStyles';
 import { getTypeId } from '../helpers/getTypeId';
 import componentPaths from './componentPaths.json';
+
+const colorTokenNames = getTokenNames('color');
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getFormattedValue = (value: any) => {
@@ -59,8 +62,9 @@ export default {
         .join(', ')}],
       control: { type: 'select' },
     },
-  },
-
+${colorTokenNames
+  .map((colorTokenName) => `    '${colorTokenName}': { control: 'color' },\n`)
+  .join('')}  },
 } as Meta<${type}Props>;
 
 const ${type}Template: Story<${type}Props> = (args) => {
@@ -84,7 +88,7 @@ ${itemIds
     );
   }
 
-  const styles = getTokenStyles();
+  const styles = getThemeTokenStyles();
   await fs.writeFile(
     path.join(__dirname, '../../src/generated/storybookStyles.css'),
     styles

@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { FC } from 'react';
 
-import { getTokenStyles } from '@/helpers/getTokenStyles';
+import { getThemeTokenStyles } from '@/helpers/getThemeTokenStyles';
 
 const Body: FC = () => {
   return (
@@ -20,7 +20,7 @@ const Document: FC = () => {
           <meta name="color-scheme" content="light dark" /> */}
 
         {/* done inline instead of an external stylesheet as a perf optimization. no flash! */}
-        <style>{getTokenStyles()}</style>
+        <style>{getThemeTokenStyles()}</style>
       </Head>
       <Body />
     </Html>

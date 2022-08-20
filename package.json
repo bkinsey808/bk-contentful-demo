@@ -25,12 +25,16 @@
     "chromatic": "dotenv -c npx chromatic -- --exit-zero-on-changes",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
     "commit": "cz",
-    "contentful:export": "shx rm -f contentful/* && contentful space export --export-dir contentful",
+    "//": "it is necessary to set delivery token in order to only get PUBLISHED content",
+    "contentful:export": "shx rm -f contentful/* && dotenv -c -- cross-var contentful space export --export-dir contentful --delivery-token %NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN%",
+    "//": "don't set delivery token if we want to get UNPUBLISHED content",
+    "contentful:export:unpublished": "shx rm -f contentful/* && contentful space export --export-dir contentful",
     "contentful:parse": "yarn build:prepare && ts-node ./src/scripts/parseContentful.ts",
     "export:generate": "yarn contentful:export && yarn contentful:parse && yarn generate:types && yarn generate:stories",
     "generate:types": "ts-node ./src/scripts/generateTypes.ts",
     "generate:stories": "ts-node ./src/scripts/generateStories.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cross-var-test": "dotenv -c -- cross-var echo %NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN%"
   },
   "config": {
     "commitizen": {
@@ -42,7 +46,10 @@
   },
   "dependencies": {
     "@kodingdotninja/use-tailwind-breakpoint": "^0.0.5",
+    "@radix-ui/react-checkbox": "^1.0.0",
+    "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-navigation-menu": "^0.1.2",
+    "@radix-ui/react-progress": "^1.0.0",
     "clsx": "^1.1.1",
     "cntl": "^1.0.0",
     "next": "^12.2.4",
@@ -78,6 +85,7 @@
     "chromatic-cli": "^1.0.0",
     "contentful-cli": "^1.14.28",
     "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
     "cz-conventional-changelog": "3.3.0",
     "dotenv-cli": "^6.0.0",
     "eslint": "8.9.0",
