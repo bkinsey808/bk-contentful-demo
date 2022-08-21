@@ -8,18 +8,49 @@ export default {
   component: Custom,
   title: 'Components/Custom',
   argTypes: {
+    content_name: {
+      table: {
+        category: 'Contentful',
+      },
+    },
     theme: {
       options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
       control: { type: 'select' },
     },
-    '--token--primary': { control: 'color' },
-    '--token--primary-background': { control: 'color' },
-    '--token--accent': { control: 'color' },
-    '--token--accent-background': { control: 'color' },
+    '--token--primary': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--primary-background': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--accent': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--accent-background': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--radius-default': {
+      control: { type: 'range', min: 0, max: 4, step: 0.125 },
+    },
   },
 } as Meta<CustomProps>;
 
 const CustomTemplate: Story<CustomProps> = (args) => {
+  if (args['--token--radius-default']) {
+    args['--token--radius-default'] += 'rem';
+  }
   return <Custom {...args} />;
 };
 

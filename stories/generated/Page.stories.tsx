@@ -8,18 +8,64 @@ export default {
   component: Page,
   title: 'Components/Page',
   argTypes: {
+    content_title: {
+      table: {
+        category: 'Contentful',
+      },
+    },
+    content_slug: {
+      table: {
+        category: 'Contentful',
+      },
+    },
+    content_pageTemplateComponent: {
+      table: {
+        category: 'Contentful',
+      },
+    },
+    content_content: {
+      table: {
+        category: 'Contentful',
+      },
+    },
     theme: {
       options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
       control: { type: 'select' },
     },
-    '--token--primary': { control: 'color' },
-    '--token--primary-background': { control: 'color' },
-    '--token--accent': { control: 'color' },
-    '--token--accent-background': { control: 'color' },
+    '--token--primary': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--primary-background': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--accent': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--accent-background': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },
+    '--token--radius-default': {
+      control: { type: 'range', min: 0, max: 4, step: 0.125 },
+    },
   },
 } as Meta<PageProps>;
 
 const PageTemplate: Story<PageProps> = (args) => {
+  if (args['--token--radius-default']) {
+    args['--token--radius-default'] += 'rem';
+  }
   return <Page {...args} />;
 };
 

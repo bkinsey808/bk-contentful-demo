@@ -8,8 +8,6 @@ import { getThemeTokenStyles } from '../helpers/getThemeTokenStyles';
 import { getTypeId } from '../helpers/getTypeId';
 import componentPaths from './componentPaths.json';
 
-const colorTokenNames = getTokenNames('color');
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getFormattedValue = (value: any) => {
   if (typeof value === 'string') {
@@ -37,6 +35,10 @@ const main = async () => {
   const types = Object.keys(componentPaths);
 
   for (const type of types) {
+    const fields = Object.keys(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (contentfulState.componentTypes as any)[type]?.fields
+    );
     const componentPath = (componentPaths as { [type: string]: string })[
       type
     ] as string;
@@ -56,18 +58,43 @@ export default {
   component: ${type},
   title: 'Components/${type}',
   argTypes: {
+${fields
+  .map(
+    (field) => `    content_${field}: {
+      table: {
+        category: 'Contentful',
+      },
+    },`
+  )
+  .join('\n')}
     theme: {
       options: [${Object.keys(tokens)
         .map((token) => `'${token}'`)
         .join(', ')}],
       control: { type: 'select' },
     },
-${colorTokenNames
-  .map((colorTokenName) => `    '${colorTokenName}': { control: 'color' },\n`)
-  .join('')}  },
+${getTokenNames('color')
+  .map(
+    (tokenName) => `    '${tokenName}': {
+      table: {
+        category: 'Colors',
+      },
+      control: 'color',
+    },\n`
+  )
+  .join('')}${getTokenNames('borderRadius')
+        .map(
+          (tokenName) => `    '${tokenName}': {
+      control: { type: 'range', min: 0, max: 4, step: 0.125 },
+    },\n`
+        )
+        .join('')}  },
 } as Meta<${type}Props>;
 
 const ${type}Template: Story<${type}Props> = (args) => {
+  if (args['--token--radius-default']) {
+    args['--token--radius-default'] += 'rem';
+  }
   return <${type} {...args} />;
 };
 

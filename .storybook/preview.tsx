@@ -1,4 +1,5 @@
 import * as NextImage from 'next/image';
+import React from 'react';
 
 import '../src/generated/storybookStyles.css';
 import '../src/styles/globals.css';
