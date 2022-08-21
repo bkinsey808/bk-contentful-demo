@@ -29,7 +29,15 @@ const NavigationMenu: FC<NavigationMenuProps> = ({
       style={getTokenStyle(tokens)}
     >
       <NavigationMenuList
-        className={`flex [&>*]:border-2 [&>*]:border-red-300 [&>*]:p-2`}
+        className={`
+          flex 
+          [&>li]:border-2 
+          [&>li]:border-accent-background
+          [&>li:first-child]:rounded-l-radius-default 
+          [&>li:last-child]:rounded-r-radius-default
+          [&>li:not(:first-child)]:-ml-0.5
+          [&>li>*]:mt-0.5 
+        `}
       >
         {content_navigationMenuItems?.map(({ id, type }) => {
           const props = getComponentProps<NavigationMenuItemProps>({

@@ -24,7 +24,7 @@
     "build-storybook": "build-storybook -s public",
     "chromatic": "dotenv -c npx chromatic -- --exit-zero-on-changes",
     "check-circular-deps": "echo \"Checking for Circular dependencies... \" && madge --circular --extensions ts ./",
-    "commit": "cz",
+    "commit": "yarn build:prepare && cz",
     "//": "it is necessary to set delivery token in order to only get PUBLISHED content",
     "contentful:export": "shx rm -f contentful/* && dotenv -c -- cross-var contentful space export --export-dir contentful --delivery-token %NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN%",
     "//": "don't set delivery token if we want to get UNPUBLISHED content",

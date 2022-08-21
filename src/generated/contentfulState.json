@@ -241,6 +241,85 @@
           "componentName": "About Option 1",
           "componentType": "NavigationMenuItem",
           "label": "About Option 1"
+        },
+        "System": {
+          "componentName": "System",
+          "componentType": "NavigationMenuItem",
+          "label": "System"
+        },
+        "Light Mode": {
+          "componentName": "Light Mode",
+          "componentType": "NavigationMenuItem",
+          "label": "Light Mode"
+        },
+        "Dark Mode": {
+          "componentName": "Dark Mode",
+          "componentType": "NavigationMenuItem",
+          "label": "Dark Mode"
+        },
+        "Monochrome": {
+          "componentName": "Monochrome",
+          "componentType": "NavigationMenuItem",
+          "label": "Monochrome"
+        },
+        "Dark Monochrome": {
+          "componentName": "Dark Monochrome",
+          "componentType": "NavigationMenuItem",
+          "label": "Dark Monochrome"
+        },
+        "Blue Tint": {
+          "componentName": "Blue Tint",
+          "componentType": "NavigationMenuItem",
+          "label": "Blue Tint"
+        },
+        "Theme": {
+          "componentName": "Theme",
+          "componentType": "NavigationMenuItem",
+          "label": "Theme",
+          "navigationMenuItems": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4HltIZ9khc0W71TjOJeSnz"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1OLj0RcK2T6ME6yV5jMYPy"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4H3jwGt1p8ZGZlO9xKdqjx"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2nZWeWYBUA0WUvDdBWqsqd"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3qrUZijU4zj7NkYPFynxGJ"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "Hu2QSra9CBUofboP00FTX"
+              }
+            }
+          ]
         }
       }
     },
@@ -285,6 +364,13 @@
                 "type": "Link",
                 "linkType": "Entry",
                 "id": "7GyTnS2OAAjsXn1aKILvzE"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5CKNoH36ZQ5zIs25T5xolp"
               }
             }
           ]
@@ -394,6 +480,34 @@
     "2cBJMhlyIL703dXvUCf18s": {
       "type": "Theme",
       "id": "BlueTint"
+    },
+    "4HltIZ9khc0W71TjOJeSnz": {
+      "type": "NavigationMenuItem",
+      "id": "System"
+    },
+    "1OLj0RcK2T6ME6yV5jMYPy": {
+      "type": "NavigationMenuItem",
+      "id": "Light Mode"
+    },
+    "4H3jwGt1p8ZGZlO9xKdqjx": {
+      "type": "NavigationMenuItem",
+      "id": "Dark Mode"
+    },
+    "2nZWeWYBUA0WUvDdBWqsqd": {
+      "type": "NavigationMenuItem",
+      "id": "Monochrome"
+    },
+    "3qrUZijU4zj7NkYPFynxGJ": {
+      "type": "NavigationMenuItem",
+      "id": "Dark Monochrome"
+    },
+    "Hu2QSra9CBUofboP00FTX": {
+      "type": "NavigationMenuItem",
+      "id": "Blue Tint"
+    },
+    "5CKNoH36ZQ5zIs25T5xolp": {
+      "type": "NavigationMenuItem",
+      "id": "Theme"
     }
   }
 }

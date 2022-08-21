@@ -20,11 +20,11 @@ const AccentColorDisplay: FC = () => {
           <label>
             <div>Progress</div>
             <Progress
-              className="h-4 w-[100%] overflow-hidden bg-accent-background"
+              className="h-4 w-full overflow-hidden bg-accent-background"
               value={66}
             >
               <ProgressIndicator
-                className="w[100%] h-[100%] bg-accent"
+                className="h-full w-full bg-accent"
                 style={{ transform: `translateX(-${100 - 66}%)` }}
               />
             </Progress>

@@ -1,6 +1,6 @@
 export type Theme = 'Global' | 'Monochrome' | 'BlueTint' | 'DarkMonochrome';
 
-  export type Token = '--token--default-size' | '--token--another-size' | '--token--primary' | '--token--primary-background' | '--token--accent' | '--token--accent-background';
+  export type Token = '--token--default-size' | '--token--another-size' | '--token--radius-default' | '--token--primary' | '--token--primary-background' | '--token--accent' | '--token--accent-background';
 
   export type ComponentType = 
   | 'Page'

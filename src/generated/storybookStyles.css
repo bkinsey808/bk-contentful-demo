@@ -1,6 +1,7 @@
 :root {
   --token--default-size: 50px;
   --token--another-size: 10px;
+  --token--radius-default: 0.5rem;
   --token--accent: blue;
   --token--accent-background: lightgray;
   color: var(--token--primary);

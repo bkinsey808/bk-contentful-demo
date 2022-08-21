@@ -2036,7 +2036,7 @@
         "id": "1K2V9aHadSotUKQOQMTpPv",
         "type": "Entry",
         "createdAt": "2022-07-17T15:17:53.340Z",
-        "updatedAt": "2022-07-17T15:17:53.340Z",
+        "updatedAt": "2022-08-21T07:05:07.388Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -2044,7 +2044,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 1,
+        "revision": 2,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -2074,6 +2074,13 @@
                 "type": "Link",
                 "linkType": "Entry",
                 "id": "7GyTnS2OAAjsXn1aKILvzE"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5CKNoH36ZQ5zIs25T5xolp"
               }
             }
           ]
@@ -2233,6 +2240,367 @@
       "fields": {
         "id": {
           "en-US": "BlueTint"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "4HltIZ9khc0W71TjOJeSnz",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:02:30.823Z",
+        "updatedAt": "2022-08-21T07:02:30.823Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "System"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "System"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "1OLj0RcK2T6ME6yV5jMYPy",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:02:54.734Z",
+        "updatedAt": "2022-08-21T07:02:54.734Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "Light Mode"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "Light Mode"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "4H3jwGt1p8ZGZlO9xKdqjx",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:03:05.897Z",
+        "updatedAt": "2022-08-21T07:03:05.897Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "Dark Mode"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "Dark Mode"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "2nZWeWYBUA0WUvDdBWqsqd",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:03:45.642Z",
+        "updatedAt": "2022-08-21T07:03:45.642Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "Monochrome"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "Monochrome"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "3qrUZijU4zj7NkYPFynxGJ",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:03:58.468Z",
+        "updatedAt": "2022-08-21T07:03:58.468Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "Dark Monochrome"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "Dark Monochrome"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "Hu2QSra9CBUofboP00FTX",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:04:09.021Z",
+        "updatedAt": "2022-08-21T07:04:09.021Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "Blue Tint"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "Blue Tint"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "clgjazsezfiu"
+          }
+        },
+        "id": "5CKNoH36ZQ5zIs25T5xolp",
+        "type": "Entry",
+        "createdAt": "2022-08-21T07:04:38.699Z",
+        "updatedAt": "2022-08-21T07:04:38.699Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationMenuItem"
+          }
+        }
+      },
+      "fields": {
+        "componentName": {
+          "en-US": "Theme"
+        },
+        "componentType": {
+          "en-US": "NavigationMenuItem"
+        },
+        "label": {
+          "en-US": "Theme"
+        },
+        "navigationMenuItems": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4HltIZ9khc0W71TjOJeSnz"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1OLj0RcK2T6ME6yV5jMYPy"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4H3jwGt1p8ZGZlO9xKdqjx"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2nZWeWYBUA0WUvDdBWqsqd"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3qrUZijU4zj7NkYPFynxGJ"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "Hu2QSra9CBUofboP00FTX"
+              }
+            }
+          ]
         }
       }
     }

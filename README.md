@@ -24,7 +24,7 @@ yarn deploy
 ```
 
 - [Demo of site](https://bk-contentful-demo.vercel.app/)
-- [Demo of storybook](https://62d2a7d38e711fa97ff596f5-lhjnkljrrp.chromatic.com/)
+- [Demo of storybook](https://62d2a7d38e711fa97ff596f5-tdwfycngrk.chromatic.com/)
 
 ## Features of this Project
 

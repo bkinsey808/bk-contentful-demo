@@ -30,5 +30,6 @@ HeaderMenu.args = {
   content_navigationMenuItems: [
     { type: 'NavigationMenuItem', id: 'Home Navigation Menu Item' },
     { type: 'NavigationMenuItem', id: 'About Navigation Menu Item' },
+    { type: 'NavigationMenuItem', id: 'Theme' },
   ],
 };
