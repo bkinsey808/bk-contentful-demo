@@ -37,6 +37,7 @@ export interface BannerProps extends Component {
   content_componentName: string;
   content_componentType: string;
   content_height: string;
+  content_backgroundImage: ComponentReference;
 }
 
 export interface NavigationMenuItemProps extends Component {

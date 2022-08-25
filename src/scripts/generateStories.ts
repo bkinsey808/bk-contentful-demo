@@ -26,8 +26,12 @@ const getFormattedValue = (value: any) => {
       .join('')}\n  ]`;
   }
 
-  const { type, id } = getTypeId(value);
-
+  console.log(value, getTypeId(value));
+  const typeId = getTypeId(value);
+  if (!typeId) {
+    return undefined;
+  }
+  const { type, id } = typeId;
   return `{ type: '${type}', id: '${id}' }`;
 };
 

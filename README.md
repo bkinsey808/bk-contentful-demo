@@ -4,8 +4,7 @@ This project demonstrates a possible approach combining NextJs, Contentful, and 
 
 ## TODO
 
-- tokens (besides color) set in tailwind config
-- theme and dark mode toggle
+- tokens (besides color and borderRadius) set in tailwind config
 - webhook to trigger deploy
 - contentful images
 - contentful preview api

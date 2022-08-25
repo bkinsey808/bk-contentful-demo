@@ -23,6 +23,11 @@ export default {
         category: 'Contentful',
       },
     },
+    content_backgroundImage: {
+      table: {
+        category: 'Contentful',
+      },
+    },
     theme: {
       options: ['Global', 'Monochrome', 'BlueTint', 'DarkMonochrome'],
       control: { type: 'select' },
@@ -76,4 +81,5 @@ AboutBanner.args = {
   content_componentName: 'About Banner',
   content_componentType: 'Banner',
   content_height: '2000px',
+  content_backgroundImage: undefined,
 };

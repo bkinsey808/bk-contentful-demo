@@ -12,7 +12,8 @@
       "fields": {
         "componentName": "string",
         "componentType": "string",
-        "height": "string"
+        "height": "string",
+        "backgroundImage": "Link"
       }
     },
     "NavigationMenuItem": {
@@ -126,7 +127,14 @@
         "About Banner": {
           "componentName": "About Banner",
           "componentType": "Banner",
-          "height": "2000px"
+          "height": "2000px",
+          "backgroundImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6JfdCVfnekwwSwgQ2gBl3k"
+            }
+          }
         }
       }
     },

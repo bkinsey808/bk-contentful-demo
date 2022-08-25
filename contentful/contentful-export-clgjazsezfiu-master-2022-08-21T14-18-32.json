@@ -131,7 +131,7 @@
         "id": "banner",
         "type": "ContentType",
         "createdAt": "2022-06-06T21:55:30.801Z",
-        "updatedAt": "2022-06-06T22:41:23.583Z",
+        "updatedAt": "2022-08-22T00:09:02.557Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -139,8 +139,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 33,
-        "publishedAt": "2022-06-06T22:41:23.583Z",
+        "publishedVersion": 35,
+        "publishedAt": "2022-08-22T00:09:02.557Z",
         "firstPublishedAt": "2022-06-06T21:55:31.073Z",
         "createdBy": {
           "sys": {
@@ -156,8 +156,8 @@
             "id": "7t25C6aD6qXNlbMaz8E3pG"
           }
         },
-        "publishedCounter": 17,
-        "version": 34,
+        "publishedCounter": 18,
+        "version": 36,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -205,6 +205,23 @@
           ],
           "disabled": false,
           "omitted": false
+        },
+        {
+          "id": "backgroundImage",
+          "name": "Background Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
         }
       ]
     },
@@ -837,7 +854,7 @@
             "linkType": "Space"
           }
         },
-        "version": 34,
+        "version": 36,
         "createdAt": "2022-06-06T21:55:31.142Z",
         "createdBy": {
           "sys": {
@@ -846,7 +863,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2022-06-06T22:41:24.135Z",
+        "updatedAt": "2022-08-22T00:09:03.274Z",
         "updatedBy": {
           "sys": {
             "id": "7t25C6aD6qXNlbMaz8E3pG",
@@ -889,6 +906,11 @@
             "helpText": "height of the banner"
           },
           "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "backgroundImage",
+          "widgetId": "assetLinkEditor",
           "widgetNamespace": "builtin"
         }
       ]
@@ -1445,7 +1467,7 @@
         "id": "6Fa2TsYp9FAu4240A58jBD",
         "type": "Entry",
         "createdAt": "2022-06-19T08:03:20.584Z",
-        "updatedAt": "2022-07-28T17:52:46.837Z",
+        "updatedAt": "2022-08-22T00:09:18.141Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1453,7 +1475,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 4,
+        "revision": 5,
         "contentType": {
           "sys": {
             "type": "Link",
@@ -1471,6 +1493,15 @@
         },
         "height": {
           "en-US": "2000px"
+        },
+        "backgroundImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6JfdCVfnekwwSwgQ2gBl3k"
+            }
+          }
         }
       }
     },
